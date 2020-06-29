@@ -51,6 +51,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'prettier/vim-prettier'
 Plug 'xolox/vim-easytags'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'weirongxu/coc-explorer'
 call plug#end()
 
 " NERDtree
