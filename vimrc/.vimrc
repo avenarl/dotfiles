@@ -53,6 +53,7 @@ Plug 'xolox/vim-easytags'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'weirongxu/coc-explorer'
 Plug 'craigemery/vim-autotag'
+Plug 'ngmy/vim-rubocop'
 call plug#end()
 
 " NERDtree
@@ -132,6 +133,11 @@ if &term == 'screen-256color'
     nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
     nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 endif
+
+" Rubocop
+let g:vimrubocop_config = '/path/to/rubocop.yml'
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
 
 " Mappings
 nnoremap <C-s> :w<CR>
