@@ -49,6 +49,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'prettier/vim-prettier'
+Plug 'xolox/vim-easytags'
 call plug#end()
 
 " NERDtree
