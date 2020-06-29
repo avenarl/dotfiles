@@ -50,6 +50,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'prettier/vim-prettier'
 Plug 'xolox/vim-easytags'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " NERDtree
@@ -109,6 +110,26 @@ let g:prettier#quickfix_auto_focus = 0
 let g:prettier#quickfix_enabled = 0
 
 autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+" Tmux
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <Leader>s :split<CR>
+nnoremap <silent> <Leader>v :vsplit<CR>
+nnoremap <silent> <Leader>q :close<CR>
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+if &term == 'screen-256color'
+    let g:tmux_navigator_no_mappings = 1
+    nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+    nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+    nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+    nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+endif
 
 " Mappings
 nnoremap <C-s> :w<CR>
