@@ -44,6 +44,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'sheerun/vim-polyglot'
 Plug 'sickill/vim-monokai'
 Plug 'lucasprag/simpleblack'
+Plug 'tpope/vim-rails'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " NERDtree
