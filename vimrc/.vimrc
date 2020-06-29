@@ -54,6 +54,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'weirongxu/coc-explorer'
 Plug 'craigemery/vim-autotag'
 Plug 'ngmy/vim-rubocop'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " NERDtree
