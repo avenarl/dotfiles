@@ -52,6 +52,7 @@ Plug 'prettier/vim-prettier'
 Plug 'xolox/vim-easytags'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'weirongxu/coc-explorer'
+Plug 'craigemery/vim-autotag'
 call plug#end()
 
 " NERDtree
