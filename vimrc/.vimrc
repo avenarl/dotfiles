@@ -323,6 +323,12 @@ set tags^=.git/tags
 set splitbelow
 set splitright
 
+" No arrows
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Up> <NOP>
+nnoremap <Down> <NOP>
+
 " Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
