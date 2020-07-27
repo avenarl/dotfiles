@@ -11,14 +11,12 @@ syntax on
 highlight Normal ctermbg=black
 filetype on
 filetype indent on
-set title
 set ignorecase
 set encoding=utf8
 set autoindent
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
-set noswapfile 
 set history=50
 set showcmd       " display incomplete commands
 set ruler         " show the cursor position all the time
@@ -48,39 +46,22 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
+" Themes
+Plug 'flazz/vim-colorschemes'
+
 " Language Syntax Support
 Plug 'pangloss/vim-javascript' " JS highlighting
 Plug 'mxw/vim-jsx' " JSX syntax highlighting
 Plug 'tpope/vim-rails'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'vim-ruby/vim-ruby'
 
 " Tools
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive' " Git tools
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'} " Nerdtree
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'mustache/vim-mustache-handlebars'
 
 call plug#end()
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" --> Theme Settings                                          "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable Rainbow Brackets  
-let g:rainbow_active = 1
-
-" NERDtree
-" sync open file with NERDTree
-" " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " --> NERDTree                                                "
@@ -95,14 +76,6 @@ let g:ctrlp_custom_ignore = {
       \ 'file': '\.exe$\|\.so$\|\.dat$'
       \ }
 let g:ctrlp_max_height = 30
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" --> Fzf                                                     "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" Autopairs closing tags
-let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.vue,*.phtml,*.js,*.jsx,*.coffee,*.erb,*.rb,'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " --> Mappings                                                "
