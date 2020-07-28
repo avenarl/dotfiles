@@ -60,6 +60,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'} " Nerdtree
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
