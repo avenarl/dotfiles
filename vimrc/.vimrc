@@ -137,7 +137,7 @@ nnoremap <C-l> <C-w>l
 " Map Ctrl + p to open fuzzy find (FZF)
 nnoremap <c-p> :Files<cr>
 
-" File Tabs
+" File Tabs experience
 map <leader>tn :tabnew<cr>
 map <leader>t<leader> :tabnext
 map <leader>tm :tabmove
