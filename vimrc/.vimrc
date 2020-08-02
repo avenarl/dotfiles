@@ -123,10 +123,14 @@ set splitbelow
 set splitright
 
 " No arrows
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
-nnoremap <Up> <NOP>
-nnoremap <Down> <NOP>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
