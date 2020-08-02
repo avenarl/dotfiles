@@ -147,3 +147,16 @@ map <leader>to :tabonly<cr>
 " file operations
 nmap <C-s> :w<CR>
 nmap <C-q> :q<CR>
+
+" opens a new empty buffer
+nmap <leader>t :enew<CR>
+" moves to the next buffer
+nmap <leader>l :bnext<CR>
+" moves to the previous buffer
+nmap <leader>h :bprevious<CR>
+" closes the current buffer, moves to the previous one
+nmap <leader>bd :bd<CR>
+" forces buffer close
+nmap <leader>BD :bd!<CR>
+" shows all open buffers and their status
+nmap <leader>bl :ls<CR>
