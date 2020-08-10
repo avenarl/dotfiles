@@ -33,6 +33,8 @@ set expandtab
 set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 set nojoinspaces " Use one space, not two, after punctuation.
 set textwidth=80 " Make it obvious where 80 characters is
+set ttyfast
+set timeout timeoutlen=1000 ttimeoutlen=50 " Set keyboard fast
 set colorcolumn=+1
 set signcolumn=yes
 set termguicolors
