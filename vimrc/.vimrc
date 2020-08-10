@@ -63,6 +63,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'airblade/vim-gitgutter'
+Plug 'bling/vim-airline'
 
 call plug#end()
 
