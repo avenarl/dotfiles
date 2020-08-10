@@ -64,6 +64,7 @@ Plug 'tpope/vim-surround'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
