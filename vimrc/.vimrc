@@ -42,7 +42,7 @@ set background=dark
 colorscheme molokai
 
 " Leader
-let mapleader = ","
+let mapleader = " "
 
 filetype plugin indent on
 
