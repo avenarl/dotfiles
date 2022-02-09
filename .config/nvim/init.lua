@@ -1,3 +1,6 @@
+require('utils')
+require('mappings')
+
 local opt = vim.opt 
 
 --Displays
