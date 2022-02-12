@@ -1,6 +1,7 @@
 require('plugins')
 require('utils')
 require('mappings')
+require('configs.treesitter')
 
 local opt = vim.opt 
 
