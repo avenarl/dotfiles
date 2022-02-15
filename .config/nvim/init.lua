@@ -4,7 +4,7 @@ require('mappings')
 require('configs.treesitter')
 
 local opt = vim.opt 
-
+vim.cmd "colorscheme slate"
 --Displays
 
 opt.number = true -- Set number
