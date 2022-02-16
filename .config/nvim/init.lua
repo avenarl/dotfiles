@@ -2,9 +2,10 @@ require('plugins')
 require('utils')
 require('mappings')
 require('configs.treesitter')
+require('configs.kanagawa')
 
 local opt = vim.opt 
-vim.cmd "colorscheme slate"
+vim.cmd 'colorscheme kanagawa'
 --Displays
 
 opt.number = true -- Set number
