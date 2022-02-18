@@ -13,12 +13,12 @@ require('kanagawa').setup({
     colors = {
 		sumiInk1 = "#000000", -- background color
 		surimiOrange = "#E95420", -- constants, imports, booleans - orange
-		sakuraPink = "#DC322F", -- numbers
-		oniViolet = "#268BD2", -- statements and keywords
+		sakuraPink = "#DC322F", -- numbers - red
+		oniViolet = "#FCC82D", -- statements and keywords
 		springGreen = "#727169", -- string - dark grey
 		crystalBlue = "#934FFF", -- functions and titles - violet
 		springViolet2 = "#DC322F", -- brackets and punctuations
-		carpYellow = "#61AFEF", -- identifiers - orange
+		carpYellow = "#4D83C1", -- identifiers - orange
 		boatYellow2 = "#719e07", -- operators and regex
 		fujiWhite = "#719E07",
 		fujiGray = "#586E75"
