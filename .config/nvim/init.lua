@@ -5,7 +5,8 @@ require('configs.treesitter')
 require('configs.kanagawa')
 
 local opt = vim.opt 
-vim.cmd 'colorscheme kanagawa'
+vim.cmd('colorscheme kanagawa')
+
 --Displays
 
 opt.number = true -- Set number
@@ -29,6 +30,4 @@ opt.swapfile = false
 opt.ignorecase = true -- Ignore case
 opt.wildignorecase = true -- Ignore case when completing file names and directories
 
--- Colorscheme 
-
-opt.termguicolors = true
+vim.opt.termguicolors = true
