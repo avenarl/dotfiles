@@ -3,6 +3,7 @@ require('utils')
 require('mappings')
 require('configs.treesitter')
 require('configs.kanagawa')
+require('configs.lualine')
 
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
