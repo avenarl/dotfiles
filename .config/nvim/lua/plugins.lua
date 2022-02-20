@@ -11,6 +11,12 @@ return require('packer').startup(function()
 	-- Hexcode color identifier
 	use { 'norcalli/nvim-colorizer.lua' }
 
-	use { 'nvim-lualine/lualine.nvim', }
+	-- Icons
+	use { 'kyazdani42/nvim-web-devicons' }
 
+	-- Statusline requires Icons
+	use { 
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 end)
