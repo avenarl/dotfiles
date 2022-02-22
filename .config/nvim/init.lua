@@ -5,6 +5,7 @@ require('configs.treesitter')
 require('configs.kanagawa')
 require('configs.lualine')
 require('configs.nvim-tree')
+require'nvim-tree'.setup{}
 
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
