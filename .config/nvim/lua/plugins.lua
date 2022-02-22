@@ -22,10 +22,15 @@ return require('packer').startup(function()
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
+	-- Navigation
 	-- File explorer
 	use 'kyazdani42/nvim-tree.lua'
 
+	-- Completion
 	-- Brackets  
 	use 'windwp/nvim-autopairs'
+	
+	-- Tags
+	use 'windwp/nvim-ts-autotag'
 
 end)
