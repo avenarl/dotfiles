@@ -5,6 +5,7 @@ require('configs.treesitter')
 require('configs.kanagawa')
 require('configs.lualine')
 require('configs.nvim-tree')
+require('configs.autopairs')
 require'nvim-tree'.setup{}
 
 local opt = vim.opt 
