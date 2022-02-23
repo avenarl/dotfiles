@@ -7,6 +7,7 @@ require('configs.lualine')
 require('configs.nvim-tree')
 require('configs.autopairs')
 require('configs.autotags')
+require('configs.cmp')
 require'nvim-tree'.setup{}
 
 local opt = vim.opt 
