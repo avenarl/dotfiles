@@ -16,7 +16,7 @@ require('kanagawa').setup({
 		peachRed= "#934FFF", -- standout specials 2 (exception handling, return)
 		fujiWhite = "#934FFF", -- default foreground
 		sakuraPink = "#89E051", -- numbers
-		springViolet2 = "#89E051", -- brackets and punctuations
+		springViolet2 = "#FFFFFF", -- brackets and punctuations
 		boatYellow2 = "#89E051", -- operators and regex
 		oniViolet = "#41B883", -- statements and keywords
 		waveRed = "#41B883", -- standout specials 1 (builtin variables)
