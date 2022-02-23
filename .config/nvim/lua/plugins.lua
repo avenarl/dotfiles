@@ -33,4 +33,7 @@ return require('packer').startup(function()
 	-- Tags
 	use 'windwp/nvim-ts-autotag'
 
+	-- Code completion
+	use 'hrsh7th/nvim-cmp'
+
 end)
