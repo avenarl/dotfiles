@@ -35,5 +35,6 @@ return require('packer').startup(function()
 
 	-- Code completion
 	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-vsnip'
 
 end)
