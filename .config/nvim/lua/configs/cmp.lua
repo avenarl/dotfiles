@@ -1,9 +1,11 @@
 require('cmp').setup({
-	 snippet = {
-		-- REQUIRED - you must specify a snippet engine
+	snippet = {
 		expand = function(args)
-		vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+		require('luasnip').lsp_expand(args.body)
 		end,
-	}
-	
+  },
+	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
+  },	
 }) 
