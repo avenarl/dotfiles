@@ -57,3 +57,9 @@ map('n', '<leader>ff', '<cmd> Telescope find_files <CR>') -- Search File
 map('n', '<leader>fg', '<cmd> Telescope live_grep live_grep <CR>') -- Live Grep
 map('n', '<leader>fb', '<cmd> Telescope buffers <CR>') -- Buffers
 map('n', '<leader>fh', '<cmd> Telescope help_tags <CR>') -- Help tags
+
+-- Bufferline 
+vim.cmd[[
+	nnoremap <silent>[b :BufferLineCycleNext<CR>
+	nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
+]]
