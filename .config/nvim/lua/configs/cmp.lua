@@ -1,7 +1,7 @@
 vim.g.completeopt="menu,menuone,noselect,noinsert"
 
--- Setup nvim-cmp
-local cmp = require'cmp'
+local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 cmp.setup({
     snippet = {
@@ -22,19 +22,6 @@ cmp.setup({
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
 
-	formatting = {
-		format = lspkind.cmp_format {
-			with_text = true,
-			menu = {
-				buffer = "[buf]",
-				nvim_lsp = "[LSP]",
-				nvim_lua = "[api]",
-				path = "[path]",
-				luasnip = "[snip]",
-			},
-		},
-	},
-	
     sources = cmp.config.sources({
 		{ name = 'nvim_lua'},
 		{ name = 'nvim_lsp' },
@@ -70,9 +57,4 @@ cmp.setup({
     })
   })
 
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig').html.setup {
-    capabilities = capabilities
-  }
+ 
