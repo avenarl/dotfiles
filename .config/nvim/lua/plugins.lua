@@ -40,8 +40,10 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-path' -- Helps to complete files
 	use 'hrsh7th/cmp-cmdline' -- Command LIne 
 	use 'hrsh7th/nvim-cmp' -- Core engine completion
+	use 'onsails/lspkind-nvim' -- LSP
 
 	-- Luasnip
 	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
+
 end)
