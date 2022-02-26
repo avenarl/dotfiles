@@ -34,12 +34,12 @@ return require('packer').startup(function()
 	use 'windwp/nvim-ts-autotag'
 
 	-- Autocompletion
-	use 'neovim/nvim-lspconfig'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-nvim-lua' -- Lua completion
+	use 'hrsh7th/cmp-nvim-lsp' -- Easy auto import
+	use 'hrsh7th/cmp-buffer' -- Completes words from the current buffer
+	use 'hrsh7th/cmp-path' -- Helps to complete files
+	use 'hrsh7th/cmp-cmdline' -- Command LIne 
+	use 'hrsh7th/nvim-cmp' -- Core engine completion
 
 	-- Luasnip
 	use 'L3MON4D3/LuaSnip'
