@@ -51,4 +51,7 @@ return require('packer').startup(function()
 		'akinsho/bufferline.nvim',
 		requires = {'kyazdani42/nvim-web-devicons'}
 	}
+
+	-- Git stuff
+	use 'nvim-lua/plenary.nvim'
 end)
