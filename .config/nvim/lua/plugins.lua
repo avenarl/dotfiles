@@ -25,6 +25,7 @@ return require('packer').startup(function()
 	-- Navigation
 	-- File explorer
 	use 'kyazdani42/nvim-tree.lua'
+	use 'nvim-telescope/telescope.nvim'
 
 	-- Completion
 	-- Brackets  
@@ -59,6 +60,8 @@ return require('packer').startup(function()
   		requires = {
     		'nvim-lua/plenary.nvim'
   	},
+	
+	-- Idention
 	use 'lukas-reineke/indent-blankline.nvim'
 }
 end)
