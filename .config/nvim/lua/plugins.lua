@@ -42,6 +42,8 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-cmdline' -- Command LIne 
 	use 'hrsh7th/nvim-cmp' -- Core engine completion
 	use 'onsails/lspkind-nvim' -- LSP
+	use 'neovim/nvim-lspconfig' 
+	use 'tami5/lspsaga.nvim' 
 
 	-- Luasnip
 	use 'L3MON4D3/LuaSnip'
