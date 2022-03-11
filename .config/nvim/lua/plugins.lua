@@ -61,9 +61,12 @@ return require('packer').startup(function()
   		'lewis6991/gitsigns.nvim',
   		requires = {
     		'nvim-lua/plenary.nvim'
-  	},
+		},
+  	}
 	
 	-- Idention
 	use 'lukas-reineke/indent-blankline.nvim'
-}
+
+	-- Terminal
+	use 'akinsho/toggleterm.nvim'
 end)
