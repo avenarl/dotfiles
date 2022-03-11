@@ -1,6 +1,7 @@
 local cmd = vim.cmd
 
 vim.g.mapleader = ' ' -- Set map leader to <space>
+vim.g.toggleterm_terminal_mapping = '<C-t>' -- For terminal
 
 -- Navigation within insert mode
 
@@ -35,15 +36,17 @@ map('n', '<C-k>', '<C-w>k') -- Move up
 map('n', '<C-j>', '<C-w>j') -- Move down
 
 -- Terminal
+function _G.set_terminal_keymaps()
+  local opts = {noremap = true}
+  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', 'jh', [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+end
 
-local silent = { silent = true }
-
-vim.api.nvim_set_keymap('n', '<leader>t', ':lua terminal:toggle()<cr>', silent)
-vim.api.nvim_set_keymap('n', '<leader>1', ':lua terminal:open(1)<cr>', silent)
-vim.api.nvim_set_keymap('n', '<leader>2', ':lua terminal:open(2)<cr>', silent)
-vim.api.nvim_set_keymap('n', '<leader>3', ':lua terminal:open(3)<cr>', silent)
-map('t', '<ESC>', '<C-\\><C-n> <CR>') -- Escape mode
-map('i', 'jk', '<ESC>') -- Escape insert mode
+vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 -- Nvim Tree
 
