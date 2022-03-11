@@ -5,6 +5,7 @@ vim.g.toggleterm_terminal_mapping = '<C-t>' -- For terminal
 
 -- Navigation within insert mode
 
+map('i', 'jk', '<Esc>') -- Escape
 map('i', '<C-h>', '<Left>') -- Backward
 map('i', '<C-e>', '<End>') -- End-of-line
 map('i', '<C-l>', '<Right>') -- Forward
@@ -38,7 +39,6 @@ map('n', '<C-j>', '<C-w>j') -- Move down
 -- Terminal
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
-  vim.api.nvim_buf_set_keymap(0, 't', 'kl', [[<C-\><C-n>]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', 'kl', [[<C-\><C-n>]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
