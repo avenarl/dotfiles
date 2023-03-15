@@ -15,6 +15,9 @@ require'nvim-tree'.setup{}
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
 
+-- Disable mouse
+opt.mouse = ''
+
 --Displays
 
 opt.number = true -- Set number
