@@ -70,4 +70,7 @@ return require('packer').startup(function()
 	-- Terminal
 	use 'akinsho/toggleterm.nvim'
 
+	-- tmux & split window Navigation
+	use 'christoomey/vim-tmux-navigator'
+
 end)
