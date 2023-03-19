@@ -13,6 +13,9 @@ alias vim "nvim"
 # when updating the config of fish
 alias fishy "nvim ~/.config/fish/config.fish"
 
+# set alias for ls -a
+alias ls "ls -a"
+
 # set the editor of choice
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
