@@ -68,7 +68,7 @@ vim.cmd[[
 ]]
 
 -- Tmux navigation
-map('n', '<C-a>h', :<C-U>TmuxNavigateLeft<cr>) -- Left tmux navigation
-map('n', '<C-a>j', :<C-U>TmuxNavigateDown<cr>) -- Down tmux navigation
-map('n', '<C-a>k', :<C-U>TmuxNavigateUp<cr>) -- Up tmux navigation
-map('n', '<C-a>l', :<C-U>TmuxNavigateRight<cr>) -- Right tmux navigation
+map('n', '<C-h>', ':<C-U>TmuxNavigateLeft<cr>') -- Left tmux navigation
+map('n', '<C-j>', ':<C-U>TmuxNavigateDown<cr>') -- Down tmux navigation
+map('n', '<C-k>', ':<C-U>TmuxNavigateUp<cr>') -- Up tmux navigation
+map('n', '<C-l>', ':<C-U>TmuxNavigateRight<cr>') -- Right tmux navigation
