@@ -23,7 +23,7 @@ map('n', '<S-t>', ':enew <CR>') -- Open a new buffer
 map('n', '<C-t>b', ':tabnew <CR>') -- Open a new vim tab
 map('n', '<TAB>', ':BufferLineCycleNext <CR>') -- Next buffer
 map('n', '<S-Tab>', ':BufferLineCycleNext <CR>') -- Previous buffer
-
+map('n', '<C-w', ':bdelete') -- Close the displaying buffer
 -- Toggle comments
 
 map('n', '<leader>/', ':CommentToggle <CR>')
@@ -66,3 +66,9 @@ vim.cmd[[
 	nnoremap <silent>[b :BufferLineCycleNext<CR>
 	nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 ]]
+
+-- Tmux navigation
+map('n', '<C-a>h', :<C-U>TmuxNavigateLeft<cr>) -- Left tmux navigation
+map('n', '<C-a>j', :<C-U>TmuxNavigateDown<cr>) -- Down tmux navigation
+map('n', '<C-a>k', :<C-U>TmuxNavigateUp<cr>) -- Up tmux navigation
+map('n', '<C-a>l', :<C-U>TmuxNavigateRight<cr>) -- Right tmux navigation
