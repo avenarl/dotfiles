@@ -74,4 +74,8 @@ return require('packer').startup(function()
 	-- Java development plugin
     use 'artur-shaik/vim-javacomplete2'
 
+	  -- Java testing plugin
+  	use 'vim-test/vim-test'
+
+
 end)
