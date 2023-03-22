@@ -73,4 +73,7 @@ return require('packer').startup(function()
 	-- tmux & split window Navigation
 	use 'christoomey/vim-tmux-navigator'
 
+	-- Syntax highlighting
+	use 'sheerun/vim-polyglot'
+
 end)
