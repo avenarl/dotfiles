@@ -76,4 +76,7 @@ return require('packer').startup(function()
 	-- Syntax highlighting
 	use 'sheerun/vim-polyglot'
 
+	-- Java development plugin
+    use 'artur-shaik/vim-javacomplete2'
+
 end)
