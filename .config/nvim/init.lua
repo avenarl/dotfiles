@@ -14,8 +14,7 @@ require'nvim-tree'.setup{}
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
 
--- Enable autocompletion
-opt.completeopt = 'menuone,noselect'
+vim.g['test#java#runner'] = 'gradle'
 
 -- Disable mouse
 opt.mouse = ''
