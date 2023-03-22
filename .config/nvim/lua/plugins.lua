@@ -40,7 +40,7 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-buffer' -- Completes words from the current buffer
 	use 'hrsh7th/cmp-path' -- Helps to complete files
 	use 'hrsh7th/cmp-cmdline' -- Command LIne 
-	use 'hrsh7th/nvim-cmp' -- Core engine completion
+	use 'hrsh7th/nvim-compe' -- Core engine completion
 	use 'onsails/lspkind-nvim' -- LSP
 	use 'neovim/nvim-lspconfig' 
 	use 'tami5/lspsaga.nvim' 
