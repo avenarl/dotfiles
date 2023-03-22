@@ -15,6 +15,9 @@ require'nvim-tree'.setup{}
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
 
+-- Enable autocompletion
+opt.completeopt = 'menuone,noselect'
+
 -- Disable mouse
 opt.mouse = ''
 
