@@ -57,12 +57,7 @@ return require('packer').startup(function()
 
 	-- Git stuff
 	use 'nvim-lua/plenary.nvim'
-	use {
-  		'lewis6991/gitsigns.nvim',
-  		requires = {
-    		'nvim-lua/plenary.nvim'
-		},
-  	}
+	use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
 	
 	-- Idention
 	use 'lukas-reineke/indent-blankline.nvim'

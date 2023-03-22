@@ -9,7 +9,6 @@ require('configs.autopairs')
 require('configs.autotags')
 require('configs.cmp')
 require('configs.bufferline')
-require('configs.gitsigns')
 require'nvim-tree'.setup{}
 
 local opt = vim.opt 
