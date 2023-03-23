@@ -20,3 +20,5 @@ alias ls "ls -a"
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
 
+# alternate global npm directory
+set -gx PATH ~/.npm-global/bin $PATH
