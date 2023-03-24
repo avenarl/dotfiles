@@ -9,6 +9,7 @@ return require('packer').startup(function()
 
 	-- Higlighting Syntax
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+	use 'nvim-treesitter/nvim-treesitter-refactor'
 
 	-- Hexcode color identifier
 	use 'norcalli/nvim-colorizer.lua' 
