@@ -22,6 +22,9 @@ lspconfig.efm.setup {
             typescriptreact = {
                 {lintCommand = "eslint -f unix --stdin --stdin-filename ${INPUT}", lintStdin = true, lintFormats = {"%f:%l:%c: %m"}}
             },
+			html = {
+                {lintCommand = "eslint -f unix --stdin --stdin-filename ${INPUT}", lintStdin = true, lintFormats = {"%f:%l:%c: %m"}}
+            },
         },
     },
 }
