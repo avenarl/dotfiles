@@ -34,20 +34,12 @@ return require('packer').startup(function()
 	-- Tags
 	use 'windwp/nvim-ts-autotag'
 
-	-- Autocompletion
-	use 'hrsh7th/cmp-nvim-lua' -- Lua completion
-	use 'hrsh7th/cmp-nvim-lsp' -- Easy auto import
-	use 'hrsh7th/cmp-buffer' -- Completes words from the current buffer
-	use 'hrsh7th/cmp-path' -- Helps to complete files
-	use 'hrsh7th/cmp-cmdline' -- Command LIne 
-	use 'hrsh7th/nvim-cmp' -- Core engine completion
-	use 'onsails/lspkind-nvim' -- LSP
-	use 'neovim/nvim-lspconfig' 
-	use 'tami5/lspsaga.nvim' 
-
-	-- Luasnip
-	use 'L3MON4D3/LuaSnip'
-	use 'saadparwaiz1/cmp_luasnip'
+    -- Mason 
+	use {
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	}
 
 	-- Buffer
 	use {
