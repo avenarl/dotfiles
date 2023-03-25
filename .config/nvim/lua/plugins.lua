@@ -28,7 +28,11 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-tree.lua'
 	use 'nvim-telescope/telescope.nvim'
 
-	-- Completion
+	-- Auto Completion
+	use 'hrsh7th/nvim-cmp' -- completion plugin
+	use 'hrsh7th/cmp-buffer' -- source for text in buffer
+	use 'hrsh7th/cmp-path' -- source for file system paths
+
 	-- Brackets  
 	use 'windwp/nvim-autopairs'
 	
