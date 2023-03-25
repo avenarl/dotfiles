@@ -11,6 +11,7 @@ require('configs.bufferline')
 require('configs.nvim-cmp')
 require('configs.lsp.mason')
 require('configs.lsp.lsp-config')
+require('configs.lsp.lspsaga')
 
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
