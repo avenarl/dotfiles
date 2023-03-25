@@ -75,6 +75,6 @@ map('n', '<C-k>', ':<C-U>TmuxNavigateUp<cr>') -- Up tmux navigation
 map('n', '<C-l>', ':<C-U>TmuxNavigateRight<cr>') -- Right tmux navigation
 
 -- Change double quote to single quote
-map('n', '<leader>s', '[[:%s/"\([^"]*\)"/'\1'/g<CR>]]')
+vim.api.nvim_set_keymap('n', '<leader>s', [[:%s/"\([^"]*\)"/'\1'/g<CR>]], { noremap = true })
 
 
