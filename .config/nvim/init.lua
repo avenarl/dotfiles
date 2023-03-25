@@ -8,11 +8,11 @@ require('configs.nvim-tree')
 require('configs.autopairs')
 require('configs.autotags')
 require('configs.bufferline')
+require('configs.nvim-cmp')
 require'nvim-tree'.setup{}
 
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
-
 vim.g['test#java#runner'] = 'gradle'
 
 -- Disable mouse
