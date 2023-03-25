@@ -44,12 +44,16 @@ return require('packer').startup(function()
 	-- Tags
 	use 'windwp/nvim-ts-autotag'
 
-    -- Mason 
-	use {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	}
+    -- Managing and installing lsp servers
+	use 'williamboman/mason.nvim'
+	use	'williamboman/mason-lspconfig.nvim'
+
+	-- LSP servers configuration
+	use	'neovim/nvim-lspconfig' -- language servers
+	use 'hrsh7th/cmp-nvim-lsp' -- autocompletion
+	use ({ 'glepnir/lspsaga.nvim', branch='main' }) -- lsp uis
+	use 'jose-elias-alvarez/typescript.nvim' -- typescript functionality
+	use 'onsails/lspkind.nvim' -- vs-code like icons for autocompletion
 
 	-- Buffer
 	use {
