@@ -1,26 +1,27 @@
-require('plugins')
-require('utils')
-require('mappings')
-require('configs.treesitter')
-require('configs.kanagawa')
-require('configs.lualine')
-require('configs.nvim-tree')
-require('configs.autopairs')
-require('configs.autotags')
-require('configs.bufferline')
-require('configs.nvim-cmp')
-require('configs.lsp.mason')
-require('configs.lsp.lsp-config')
-require('configs.lsp.lspsaga')
-require('configs.lsp.null-ls')
-require'nvim-tree'.setup{}
+require("plugins")
+require("utils")
+require("mappings")
+require("configs.treesitter")
+require("configs.kanagawa")
+require("configs.lualine")
+require("configs.nvim-tree")
+require("configs.autopairs")
+require("configs.autotags")
+require("configs.bufferline")
+require("configs.nvim-cmp")
+require("configs.lsp.mason")
+require("configs.lsp.lsp-config")
+require("configs.lsp.lspsaga")
+require("configs.lsp.null-ls")
+require("configs.gitsigns")
+require("nvim-tree").setup({})
 
-local opt = vim.opt 
-vim.cmd('colorscheme kanagawa')
-vim.g['test#java#runner'] = 'gradle'
+local opt = vim.opt
+vim.cmd("colorscheme kanagawa")
+vim.g["test#java#runner"] = "gradle"
 
 -- Disable mouse
-opt.mouse = ''
+opt.mouse = ""
 
 --Displays
 
