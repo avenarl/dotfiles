@@ -12,6 +12,8 @@ require('configs.nvim-cmp')
 require('configs.lsp.mason')
 require('configs.lsp.lsp-config')
 require('configs.lsp.lspsaga')
+require('configs.lsp.null-ls')
+require'nvim-tree'.setup{}
 
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
