@@ -11,7 +11,6 @@ require('configs.bufferline')
 require('configs.nvim-cmp')
 require('configs.lsp.mason')
 require('configs.lsp.lsp-config')
-require'nvim-tree'.setup{}
 
 local opt = vim.opt 
 vim.cmd('colorscheme kanagawa')
@@ -24,7 +23,7 @@ opt.mouse = ''
 
 opt.number = true -- Set number
 opt.relativenumber = true -- Set relative number
-opt.cursorline = true 
+opt.cursorline = true
 opt.lazyredraw = true
 opt.hidden = true
 
