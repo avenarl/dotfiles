@@ -24,6 +24,7 @@ map('n', '<C-t>b', ':tabnew <CR>') -- Open a new vim tab
 map('n', '<TAB>', ':BufferLineCycleNext <CR>') -- Next buffer
 map('n', '<S-Tab>', ':BufferLineCycleNext <CR>') -- Previous buffer
 map('n', '<C-w', ':bdelete') -- Close the displaying buffer
+
 -- Toggle comments
 
 map('n', '<leader>/', ':CommentToggle <CR>')
@@ -72,3 +73,8 @@ map('n', '<C-h>', ':<C-U>TmuxNavigateLeft<cr>') -- Left tmux navigation
 map('n', '<C-j>', ':<C-U>TmuxNavigateDown<cr>') -- Down tmux navigation
 map('n', '<C-k>', ':<C-U>TmuxNavigateUp<cr>') -- Up tmux navigation
 map('n', '<C-l>', ':<C-U>TmuxNavigateRight<cr>') -- Right tmux navigation
+
+-- Change double quote to single quote
+map('n', '<leader>s', '[[:%s/"\([^"]*\)"/'\1'/g<CR>]]')
+
+
