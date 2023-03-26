@@ -16,6 +16,10 @@ alias fishy "nvim ~/.config/fish/config.fish"
 # set alias for ls -a
 alias ls "ls -a"
 
+if type -q exa
+    alias ls "exa -l --icons -h -m -u"
+end
+
 # set the editor of choice
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
@@ -42,3 +46,5 @@ set -g tide_git_stash_color 000000
 set -g tide_git_untracked_color 000000
 set -g tide_git_upstream_color 000000
 set -g tide_pwd_bg_color 444444
+
+
