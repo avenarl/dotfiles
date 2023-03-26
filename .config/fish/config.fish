@@ -18,6 +18,7 @@ alias ls "ls -a"
 
 if type -q exa
     alias ls "exa -l --icons -h -m -u"
+    alias ll "exa --header --long --tree --level=3 -a -m -u"
 end
 
 # set the editor of choice
