@@ -20,6 +20,10 @@ alias ls "ls -a"
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
 
+# replacement of nvm
+set -Ux FNM_DIR "$HOME/.fnm"
+source "$FNM_DIR/fnm.fish"
 
-
+# yarn PATH
+set -gx PATH $PATH /usr/local/share/.config/yarn/global/node_modules/.bin
 
