@@ -25,3 +25,7 @@ end
 set -gx EDITOR /usr/bin/nvim
 set -gx GIT_EDITOR /usr/bin/nvim
 
+# command colors
+set fish_color_valid_path white --underline
+set fish_color_quote green
+
