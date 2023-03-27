@@ -46,4 +46,7 @@ opt.swapfile = false
 opt.ignorecase = true -- Ignore case
 opt.wildignorecase = true -- Ignore case when completing file names and directories
 
-vim.opt.termguicolors = true
+-- Apperance
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
