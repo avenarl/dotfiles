@@ -18,6 +18,15 @@ require("nvim-tree").setup({})
 
 local opt = vim.opt
 vim.cmd("colorscheme kanagawa")
+
+vim.cmd([[autocmd FileType NvimTree lua ResetNvimTreeColors()]])
+
+function ResetNvimTreeColors()
+	vim.cmd([[highlight NvimTreeFolderName guifg=#7FBC4CA]])
+	--	vim.cmd([[highlight NvimTreeFolderIcon guifg=#63E76B]])
+	vim.cmd([[highlight NvimTreeIndentMarker guifg=white]])
+end
+
 vim.g["test#java#runner"] = "gradle"
 
 -- Disable mouse
@@ -50,3 +59,5 @@ opt.wildignorecase = true -- Ignore case when completing file names and director
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+
+opt.clipboard:append("unnamedplus")
