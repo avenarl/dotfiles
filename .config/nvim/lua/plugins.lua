@@ -1,11 +1,15 @@
 vim.cmd([[packadd packer.nvim]])
 
-return require("packer").startup(function()
+return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
 	-- Colorscheme
 	use("rebelot/kanagawa.nvim")
+	use("navarasu/onedark.nvim")
+	use("folke/tokyonight.nvim")
+	use("catppuccin/catppuccin")
+	use("ellisonleao/gruvbox.nvim")
 
 	-- Higlighting Syntax
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -66,7 +70,8 @@ return require("packer").startup(function()
 	})
 
 	-- Git stuff
-	use({'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'})
+	use({ "lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim" })
+
 	-- Idention
 	use("lukas-reineke/indent-blankline.nvim")
 
@@ -81,6 +86,9 @@ return require("packer").startup(function()
 
 	-- Java development plugin
 	use("artur-shaik/vim-javacomplete2")
+
+	-- Svelte syntax and indention
+	use("evanleck/vim-svelte")
 
 	-- Java testing plugin
 	use("vim-test/vim-test")
