@@ -89,7 +89,10 @@ return require("packer").startup(function(use)
 
 	-- Svelte syntax and indention
 	use("evanleck/vim-svelte")
+	use("mhartington/formatter.nvim")
 
 	-- Java testing plugin
 	use("vim-test/vim-test")
+	-- Java
+	use("mfussenegger/nvim-jdtls")
 end)

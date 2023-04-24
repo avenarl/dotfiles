@@ -14,6 +14,8 @@ require("configs.lsp.lsp-config")
 require("configs.lsp.lspsaga")
 require("configs.lsp.null-ls")
 require("configs.gitsigns")
+require("configs.jdtls")
+require("configs.formatter")
 require("nvim-tree").setup({})
 
 local opt = vim.opt
