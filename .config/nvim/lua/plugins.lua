@@ -70,6 +70,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Git stuff
+	use("nvim-lua/plenary.nvim")
 	use({ "lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- Idention
@@ -93,6 +94,8 @@ return require("packer").startup(function(use)
 
 	-- Java testing plugin
 	use("vim-test/vim-test")
+
 	-- Java
 	use("mfussenegger/nvim-jdtls")
+	use("mfussenegger/nvim-dap")
 end)
