@@ -1,9 +1,33 @@
-require('nvim-ts-autotag').setup({
+require("nvim-ts-autotag").setup({
 	filetypes = {
-		'html', 'xml', 'javascript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'rescript'
+		"html",
+		"xml",
+		"javascript",
+		"javascriptreact",
+		"typescriptreact",
+		"svelte",
+		"vue",
+		"rescript",
+		"java",
 	},
 	skip_tags = {
-  		'area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'slot',
-		'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr','menuitem'
-	}
+		"area",
+		"base",
+		"br",
+		"col",
+		"command",
+		"embed",
+		"hr",
+		"img",
+		"slot",
+		"input",
+		"keygen",
+		"link",
+		"meta",
+		"param",
+		"source",
+		"track",
+		"wbr",
+		"menuitem",
+	},
 })
