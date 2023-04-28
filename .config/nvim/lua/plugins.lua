@@ -97,5 +97,8 @@ return require("packer").startup(function(use)
 
 	-- Java
 	use("mfussenegger/nvim-jdtls")
-	use("mfussenegger/nvim-dap")
+	use("mfussenegger/nvim-dap") -- Debugging
+
+	-- Bundle all the "boilerplate code"
+	use("VonHeikemen/lsp-zero.nvim")
 end)
