@@ -16,6 +16,11 @@ if not typescript_setup then
 	return
 end
 
+local svelte_setup, svelte = pcall(require, "svelte")
+if not svelte_setup then
+	return
+end
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -62,6 +67,19 @@ typescript.setup({
 	},
 })
 
+-- configure svelte server with plugin
+svelte.setup({
+	server = {
+		cmd = { "svelteserver", "--stdio" },
+		capabilities = capabilities,
+		on_attach = function(client)
+			-- svelte specific settings
+			client.resolved_capabilities.document_formatting = true
+			vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)]])
+		end,
+	},
+})
+
 -- configure css server
 lspconfig["cssls"].setup({
 	capabilities = capabilities,
@@ -86,12 +104,6 @@ lspconfig["angularls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
-})
-
-lspconfig["jdtls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "java" },
 })
 
 -- configure lua server (with special settings)
