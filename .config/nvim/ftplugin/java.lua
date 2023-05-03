@@ -1,5 +1,3 @@
-local M = {}
-
 local home = os.getenv("HOME")
 local jdtls_installation_path = home .. ".config/jdtls"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
@@ -27,6 +25,64 @@ local config = {
 		"-data",
 		workspace_dir,
 	},
+	flags = {
+		debounce_text_changes = 150,
+		allow_incremental_sync = true,
+	},
+	handlers = {},
+	root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
+	contentProvider = { preferred = "fernflower" },
+	on_init = on_init,
+	init_options = {
+		bundles = bundles,
+		extendedClientCapabilities = extendedClientCapabilities,
+	},
+	settings = {
+		java = {
+			signatureHelp = { enabled = true },
+		},
+	},
+	eclipse = {
+		downloadSources = true,
+	},
+	maven = {
+		downloadSources = true,
+	},
+	implementationsCodeLens = {
+		enabled = true,
+	},
+	referencesCodeLens = {
+		enabled = true,
+	},
+	references = {
+		includeDecompiledSources = true,
+	},
+	inlayHints = {
+		parameterNames = {
+			enabled = "all", -- literals, all, none
+		},
+	},
+	completion = {
+		favoriteStaticMembers = {
+			"org.hamcrest.MatcherAssert.assertThat",
+			"org.hamcrest.Matchers.*",
+			"org.hamcrest.CoreMatchers.*",
+			"org.junit.jupiter.api.Assertions.*",
+			"java.util.Objects.requireNonNull",
+			"java.util.Objects.requireNonNullElse",
+			"org.mockito.Mockito.*",
+		},
+	},
+	sources = {
+		organizeImports = {
+			starThreshold = 9999,
+			staticStarThreshold = 9999,
+		},
+	},
+	codeGeneration = {
+		toString = {
+			template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
+		},
+		useBlocks = true,
+	},
 }
-
-return M
