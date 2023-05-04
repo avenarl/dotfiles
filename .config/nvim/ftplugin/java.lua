@@ -99,4 +99,22 @@ local bundles = {
 	),
 }
 
+local keymap = vim.keymap.set
+
+keymap("n", "A-o", ":lua require'jdtls'.organize_imports()<cr>", { silent = true })
+keymap("n", "crv", ":lua require'jdtls'.extract_variable()<cr>", { silent = true })
+keymap("v", "crv", "<Esc>:lua require'jdtls'.extract_variable(true)<cr>", { silent = true })
+keymap("n", "crc", ":lua require'jdtls'.extract_constant()<cr>", { silent = true })
+keymap("v", "crc", "<Esc>:lua require'jdtls'.extract_constant(true)<cr>", { silent = true })
+keymap("v", "crm", "<Esc>:lua require'jdtls'.extract_method(true)<cr>", { silent = true })
+
+vim.cmd([[
+command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)
+command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)
+command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()
+command! -buffer JdtJol lua require('jdtls').jol()
+command! -buffer JdtBytecode lua require('jdtls').javap()
+command! -buffer JdtJshell lua require('jdtls').jshell()
+]])
+
 require("jdtls").start_or_attach(config)
