@@ -1,3 +1,7 @@
+vim.opt_local.shiftwidth = 2
+vim.opt_local.tabstop = 2
+vim.opt_local.cmdheight = 2
+
 local home = os.getenv("HOME")
 local jdtls_installation_path = home .. "/.config/jdtls"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
