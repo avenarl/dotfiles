@@ -1,8 +1,7 @@
 local home = os.getenv("HOME")
-local jdtls_installation_path = home .. ".config/jdtls"
+local jdtls_installation_path = home .. "/.config/jdtls"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = home .. "Projects/" .. project_name
-
+local workspace_dir = home .. "/Projects/tweelon/" .. project_name
 local config = {
 	cmd = {
 		"java",
@@ -12,7 +11,7 @@ local config = {
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
 		"-Xmx1g",
-		"-javaagent:" .. home .. ".local/share/nvim/mason/packages/jdtls/lombok.jar",
+		"-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
 		"java.base/java.util=ALL-UNNAMED",
@@ -34,12 +33,18 @@ local config = {
 	contentProvider = { preferred = "fernflower" },
 	on_init = on_init,
 	init_options = {
-		bundles = bundles,
 		extendedClientCapabilities = extendedClientCapabilities,
 	},
+
 	settings = {
 		java = {
 			signatureHelp = { enabled = true },
+			runtimes = {
+				{
+					name = "JavaSE-17",
+					path = "/usr/lib/jvm/jdk-17/",
+				},
+			},
 		},
 	},
 	eclipse = {
@@ -86,3 +91,12 @@ local config = {
 		useBlocks = true,
 	},
 }
+
+local bundles = {
+	vim.fn.glob(
+		home .. ".config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
+		1
+	),
+}
+
+require("jdtls").start_or_attach(config)
