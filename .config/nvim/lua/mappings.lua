@@ -23,7 +23,7 @@ map("n", "<S-t>", ":enew <CR>") -- Open a new buffer
 map("n", "<C-t>b", ":tabnew <CR>") -- Open a new vim tab
 map("n", "<TAB>", ":BufferLineCycleNext <CR>") -- Next buffer
 map("n", "<S-Tab>", ":BufferLineCycleNext <CR>") -- Previous buffer
-map("n", "<C-w", ":bdelete") -- Close the displaying buffer
+map("n", "<C-w>", ":bdelete <CR>") -- Close the displaying buffer
 
 -- Toggle comments
 
@@ -75,4 +75,30 @@ map("n", "<C-k>", ":<C-U>TmuxNavigateUp<cr>") -- Up tmux navigation
 map("n", "<C-l>", ":<C-U>TmuxNavigateRight<cr>") -- Right tmux navigation
 
 -- Change double quote to single quote
-vim.api.nvim_set_keymap("n", "<leader>s", [[:%s/"\([^"]*\)"/'\1'/g<CR>]], { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>s", [[:%s/'\([^']*\)"/"\1"/g<CR>]], { noremap = true })
+
+function get_spring_boot_runner(profile, debug)
+	local debug_param = ""
+	if debug then
+		debug_param =
+			' -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"'
+	end
+
+	local profile_param = ""
+	if profile then
+		profile_param = " -Dspring-boot.run.profiles=" .. profile .. " "
+	end
+
+	return "mvn spring-boot:run " .. profile_param .. debug_param
+end
+
+function run_spring_boot(debug)
+	vim.cmd("term " .. get_spring_boot_runner("local", debug))
+end
+
+vim.keymap.set("n", "<c-r>", function()
+	run_spring_boot()
+end)
+vim.keymap.set("n", "<a-r>", function()
+	run_spring_boot(true)
+end)
