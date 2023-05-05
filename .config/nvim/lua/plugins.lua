@@ -85,19 +85,18 @@ return require("packer").startup(function(use)
 	-- Syntax highlighting
 	use("sheerun/vim-polyglot")
 
-	-- Java development plugin
-	use("artur-shaik/vim-javacomplete2")
-
 	-- Svelte syntax and indention
 	use("evanleck/vim-svelte")
 	use("mhartington/formatter.nvim")
 
-	-- Java testing plugin
-	use("vim-test/vim-test")
-
 	-- Java
 	use("mfussenegger/nvim-jdtls")
 	use("mfussenegger/nvim-dap") -- Debugging
+	use("rcarriga/cmp-dap")
+	use("williamboman/nvim-lsp-installer")
+
+	-- SQL
+	use("nanotee/sqls.nvim")
 
 	-- Bundle all the "boilerplate code"
 	use("VonHeikemen/lsp-zero.nvim")
