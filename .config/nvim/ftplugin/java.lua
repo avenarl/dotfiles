@@ -2,10 +2,39 @@ vim.opt_local.shiftwidth = 2
 vim.opt_local.tabstop = 2
 vim.opt_local.cmdheight = 2
 
+local status, jdtls = pcall(require, "jdtls")
+if not status then
+	return
+end
+
+-- Determine OS
 local home = os.getenv("HOME")
-local jdtls_installation_path = home .. "/.config/jdtls"
+if vim.fn.has("mac") == 1 then
+	WORKSPACE_PATH = home .. "/workspace/"
+	CONFIG = "/config_mac/"
+elseif vim.fn.has("unix") == 1 then
+	WORKSPACE_PATH = home .. "/workspace/"
+	CONFIG = "/config_linux/"
+else
+	print("Unsupported system")
+end
+
+local jdtls_installation_path = home .. "/.config/jdtls/"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = home .. "/Projects/tweelon/" .. project_name
+local workspace_dir = WORKSPACE_PATH .. project_name
+local java_dap = home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/"
+local vscode_java_test = home .. "/.config/nvim/vscode-java-test/server/"
+
+-- Find root of project
+local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+local root_dir = require("jdtls.setup").find_root(root_markers)
+if root_dir == "" then
+	return
+end
+
+local extendedClientCapabilities = jdtls.extendedClientCapabilities
+extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+
 local config = {
 	cmd = {
 		"java",
@@ -24,7 +53,7 @@ local config = {
 		"-jar",
 		jdtls_installation_path .. "/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
 		"-configuration",
-		jdtls_installation_path .. "/config_linux",
+		jdtls_installation_path .. CONFIG,
 		"-data",
 		workspace_dir,
 	},
@@ -33,10 +62,14 @@ local config = {
 		allow_incremental_sync = true,
 	},
 	handlers = {},
-	root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
+
 	contentProvider = { preferred = "fernflower" },
 	on_init = on_init,
 	init_options = {
+		bundles = {
+			vim.fn.glob(java_dap .. "com.microsoft.java.debug.plugin-0.45.0.jar", 1),
+			vim.fn.glob(vscode_java_test .. "*.jar", 1),
+		},
 		extendedClientCapabilities = extendedClientCapabilities,
 	},
 
@@ -96,13 +129,12 @@ local config = {
 	},
 }
 
-local bundles = {
-	vim.fn.glob(
-		home .. ".config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
-		1
-	),
-}
+-- Test
+config["on_attach"] = function(client, bufnr)
+	require("jdtls").setup_dap({ hotcodereplace = "auto" })
+end
 
+-- Debug
 local keymap = vim.keymap.set
 
 keymap("n", "A-o", ":lua require'jdtls'.organize_imports()<cr>", { silent = true })
