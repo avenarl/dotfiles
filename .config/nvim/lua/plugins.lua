@@ -69,6 +69,10 @@ return require("packer").startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
 
+	-- Notetaking
+	use("abeleinin/papyrus")
+	use("vim-pandoc/vim-pandoc-syntax")
+
 	-- Git stuff
 	use("nvim-lua/plenary.nvim")
 	use({ "lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim" })
