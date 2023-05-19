@@ -53,6 +53,13 @@ end
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
+-- SQL
+require("lspconfig").sqls.setup({
+	on_attach = function(client, bufnr)
+		require("sqls").on_attach(client, bufnr)
+	end,
+})
+
 -- configure html server
 lspconfig["html"].setup({
 	capabilities = capabilities,
@@ -104,6 +111,13 @@ lspconfig["angularls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
+})
+
+-- configure kotlin language server
+require("lspconfig").kotlin_language_server.setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
 })
 
 -- configure lua server (with special settings)
