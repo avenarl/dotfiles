@@ -36,6 +36,7 @@ map("n", "<C-h>", "<C-w>h") -- Move left
 map("n", "<C-h>", "<C-w>l") -- Move right
 map("n", "<C-k>", "<C-w>k") -- Move up
 map("n", "<C-j>", "<C-w>j") -- Move down
+map("i", "<C-Right>", "<C-p>") -- Move to next word
 
 -- Terminal
 function _G.set_terminal_keymaps()
@@ -68,6 +69,10 @@ vim.cmd([[
 	nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 ]])
 
+-- Notetaking (Papyrus)
+vim.g.papyrus_latex_engine = "xelatex"
+vim.g.papyrus_viewer = "zathura"
+
 -- Tmux navigation
 map("n", "<C-h>", ":<C-U>TmuxNavigateLeft<cr>") -- Left tmux navigation
 map("n", "<C-j>", ":<C-U>TmuxNavigateDown<cr>") -- Down tmux navigation
@@ -78,7 +83,6 @@ map("n", "<C-l>", ":<C-U>TmuxNavigateRight<cr>") -- Right tmux navigation
 vim.api.nvim_set_keymap("n", "<leader>s", [[:%s/'\([^']*\)"/"\1"/g<CR>]], { noremap = true })
 
 -- Java Development
-vim.g.mapleader = " "
 
 -- key_mapping --
 local key_map = function(mode, key, result)
@@ -157,10 +161,10 @@ end
 key_map("n", "gs", ":lua show_dap_centered_scopes()<CR>")
 
 -- move in debug
-key_map("n", "<F5>", ':lua require"dap".continue()<CR>')
-key_map("n", "<F8>", ':lua require"dap".step_over()<CR>')
-key_map("n", "<F7>", ':lua require"dap".step_into()<CR>')
-key_map("n", "<S-F8>", ':lua require"dap".step_out()<CR>')
+key_map("n", "<S-c>", ':lua require"dap".continue()<CR>')
+key_map("n", "<S-p>", ':lua require"dap".step_over()<CR>')
+key_map("n", "<S-i>", ':lua require"dap".step_into()<CR>')
+key_map("n", "<S-o>", ':lua require"dap".step_out()<CR>')
 
 function attach_to_debug()
 	local dap = require("dap")
