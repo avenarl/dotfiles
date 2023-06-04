@@ -11,8 +11,7 @@ map("i", "<C-e>", "<End>") -- End-of-line
 map("i", "<C-l>", "<Right>") -- Forward
 map("i", "<C-k>", "<Up>") -- Next line
 map("i", "<C-j>", "<Down>") -- Previous line
-map("i", "<C-a>", "<ESC>^i") -- Beginning of line
-
+map("i", "<C-a>", "<Esc>^i") -- Start of line
 -- Buffers in normal mode
 
 map("n", "<C-s>", ":w <CR>") -- Save file using :w
@@ -58,10 +57,13 @@ map("n", "<leader>n", ":NvimTreeFindFile <CR>") -- Find file
 
 -- Telescope
 
-map("n", "<leader>ff", "<cmd> Telescope find_files <CR>") -- Search File
-map("n", "<leader>fg", "<cmd> Telescope live_grep live_grep <CR>") -- Live Grep
-map("n", "<leader>fb", "<cmd> Telescope buffers <CR>") -- Buffers
-map("n", "<leader>fh", "<cmd> Telescope help_tags <CR>") -- Help tags
+--map("n", "<leader>ff", "<cmd> Telescope find_files <CR>") -- Search File
+--map("n", "<leader>fg", "<cmd> Telescope live_grep live_grep <CR>") -- Live Grep
+--map("n", "<leader>fb", "<cmd> Telescope buffers <CR>") -- Buffers
+--map("n", "<leader>fh", "<cmd> Telescope help_tags <CR>") -- Help tags
+
+-- Fzf
+map("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>")
 
 -- Bufferline
 vim.cmd([[
