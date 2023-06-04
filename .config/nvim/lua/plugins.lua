@@ -21,6 +21,9 @@ return require("packer").startup(function(use)
 	-- Icons
 	use("kyazdani42/nvim-web-devicons")
 
+	-- File finder
+	use("ibhagwan/fzf-lua")
+
 	-- Statusline requires Icons
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -28,9 +31,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Navigation
-	-- File explorer
 	use("kyazdani42/nvim-tree.lua")
-	use("nvim-telescope/telescope.nvim")
 
 	-- Auto Completion
 	use("hrsh7th/nvim-cmp") -- completion plugin
