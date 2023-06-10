@@ -49,8 +49,8 @@ opt.hidden = true
 -- Identions
 
 opt.smartindent = true -- Insert indents automatically
-opt.shiftwidth = 4 -- Size of an indent
-opt.tabstop = 4 -- Number of spaces tabs count for
+opt.shiftwidth = 2 -- Size of an indent
+opt.tabstop = 2 -- Number of spaces tabs count for
 
 -- Backups
 
