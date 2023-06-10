@@ -8,6 +8,7 @@ return require("packer").startup(function(use)
 	use("rebelot/kanagawa.nvim")
 	use("navarasu/onedark.nvim")
 	use("folke/tokyonight.nvim")
+	use("safv12/andromeda.vim")
 	use("catppuccin/catppuccin")
 	use("ellisonleao/gruvbox.nvim")
 
@@ -93,6 +94,7 @@ return require("packer").startup(function(use)
 	-- Svelte syntax and indention
 	use("evanleck/vim-svelte")
 	use("mhartington/formatter.nvim")
+	use("MunifTanjim/prettier.nvim")
 
 	-- Java
 	use("mfussenegger/nvim-jdtls")
