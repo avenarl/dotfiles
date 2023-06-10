@@ -26,6 +26,7 @@ local opt = vim.opt
 
 vim.cmd("colorscheme kanagawa")
 
+vim.cmd([[ filetype plugin indent on ]])
 vim.cmd([[autocmd FileType NvimTree lua ResetNvimTreeColors()]])
 
 function ResetNvimTreeColors()
