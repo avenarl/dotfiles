@@ -9,17 +9,25 @@ require("configs.autopairs")
 require("configs.autotags")
 require("configs.bufferline")
 require("configs.nvim-cmp")
+require("configs.nvim-dap")
 require("configs.lsp.mason")
 require("configs.lsp.lsp-config")
 require("configs.lsp.lspsaga")
 require("configs.lsp.null-ls")
-require("configs.lsp.java-lsp")
 require("configs.gitsigns")
 require("configs.formatter")
-require("configs.jdtls")
+require("configs.nvim-dap")
+require("configs.lsp.nvim-lsp-installer")
 require("nvim-tree").setup({})
+--require("telescope").setup({})
 
 local opt = vim.opt
+
+-- Apperance
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
+
 vim.cmd("colorscheme kanagawa")
 
 vim.cmd([[autocmd FileType NvimTree lua ResetNvimTreeColors()]])
@@ -29,8 +37,6 @@ function ResetNvimTreeColors()
 	--	vim.cmd([[highlight NvimTreeFolderIcon guifg=#63E76B]])
 	vim.cmd([[highlight NvimTreeIndentMarker guifg=white]])
 end
-
-vim.g["test#java#runner"] = "gradle"
 
 -- Disable mouse
 opt.mouse = ""
@@ -57,10 +63,5 @@ opt.swapfile = false
 
 opt.ignorecase = true -- Ignore case
 opt.wildignorecase = true -- Ignore case when completing file names and directories
-
--- Apperance
-opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
 
 opt.clipboard:append("unnamedplus")
