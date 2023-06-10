@@ -18,15 +18,11 @@ require("configs.gitsigns")
 require("configs.formatter")
 require("configs.nvim-dap")
 require("configs.lsp.nvim-lsp-installer")
+require("configs.prettier")
 require("nvim-tree").setup({})
 --require("telescope").setup({})
 
 local opt = vim.opt
-
--- Apperance
-opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
 
 vim.cmd("colorscheme kanagawa")
 
@@ -58,6 +54,11 @@ opt.tabstop = 4 -- Number of spaces tabs count for
 -- Backups
 
 opt.swapfile = false
+
+-- Apperance
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
 
 -- Search
 
