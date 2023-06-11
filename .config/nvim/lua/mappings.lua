@@ -24,6 +24,9 @@ map("n", "<TAB>", ":BufferLineCycleNext <CR>") -- Next buffer
 map("n", "<S-Tab>", ":BufferLineCycleNext <CR>") -- Previous buffer
 map("n", "<C-w>", ":bdelete <CR>") -- Close the displaying buffer
 
+-- Delete
+map("i", "<C-d>", "<C-o>diw") -- delete a word
+
 -- Toggle comments
 
 map("n", "<leader>/", ":CommentToggle <CR>")
@@ -125,7 +128,6 @@ function get_spring_boot_runner(profile, debug)
 
 	return "mvn spring-boot:run " .. profile_param .. debug_param
 end
-
 function run_spring_boot(debug)
 	vim.cmd("term " .. get_spring_boot_runner(method_name, debug))
 end
