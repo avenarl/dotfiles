@@ -27,6 +27,9 @@ map("n", "<C-w>", ":bdelete <CR>") -- Close the displaying buffer
 -- Delete
 map("i", "<C-d>", "<C-o>diw") -- delete a word
 
+-- Toggle Terminal
+map("n", "<C-t>", ":terminal<CR>")
+
 -- Toggle comments
 
 map("n", "<leader>/", ":CommentToggle <CR>")
