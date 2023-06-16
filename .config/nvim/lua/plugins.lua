@@ -12,6 +12,9 @@ return require("packer").startup(function(use)
 	use("catppuccin/catppuccin")
 	use("ellisonleao/gruvbox.nvim")
 
+	-- Whitespaces
+	use("lukoshkin/highlight-whitespace")
+
 	-- Higlighting Syntax
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("nvim-treesitter/nvim-treesitter-refactor")
