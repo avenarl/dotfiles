@@ -1,6 +1,10 @@
 local cmd = vim.cmd
+local opts = { silent = true }
 
+--Remap space as leader key
+map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " " -- Set map leader to <space>
+
 vim.g.toggleterm_terminal_mapping = "<C-t>" -- For terminal
 
 -- Navigation within insert mode
