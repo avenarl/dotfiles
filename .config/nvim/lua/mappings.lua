@@ -1,8 +1,4 @@
 local cmd = vim.cmd
-local opts = { silent = true }
-
---Remap space as leader key
-map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " " -- Set map leader to <space>
 
 vim.g.toggleterm_terminal_mapping = "<C-t>" -- For terminal
@@ -16,6 +12,7 @@ map("i", "<C-l>", "<Right>") -- Forward
 map("i", "<C-k>", "<Up>") -- Next line
 map("i", "<C-j>", "<Down>") -- Previous line
 map("i", "<C-a>", "<Esc>^i") -- Start of line
+
 -- Buffers in normal mode
 
 map("n", "<C-s>", ":w <CR>") -- Save file using :w
