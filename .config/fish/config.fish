@@ -43,3 +43,6 @@ alias tmux='tmux -2'
 # spring
 set -gx PATH $PATH ~/Downloads/spring-3.0.6/bin/
 
+# intellij
+set PATH /path/to/intellij/bin $PATH
+alias idea='idea'
