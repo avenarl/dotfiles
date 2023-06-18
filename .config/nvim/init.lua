@@ -1,31 +1,31 @@
-require("plugins")
-require("utils")
-require("mappings")
-require("configs.treesitter")
-require("configs.kanagawa")
-require("configs.lualine")
-require("configs.nvim-tree")
-require("configs.autopairs")
-require("configs.autotags")
-require("configs.bufferline")
-require("configs.nvim-cmp")
-require("configs.nvim-dap")
-require("configs.lsp.mason")
-require("configs.lsp.lsp-config")
-require("configs.lsp.lspsaga")
-require("configs.lsp.null-ls")
-require("configs.gitsigns")
-require("configs.formatter")
-require("configs.nvim-dap")
-require("configs.lsp.nvim-lsp-installer")
-require("configs.prettier")
-require("autocommands")
-require("nvim-tree").setup({})
+require "plugins"
+require "utils"
+require "mappings"
+require "configs.treesitter"
+require "configs.kanagawa"
+require "configs.lualine"
+require "configs.nvim-tree"
+require "configs.autopairs"
+require "configs.autotags"
+require "configs.bufferline"
+require "configs.nvim-cmp"
+require "configs.nvim-dap"
+require "configs.lsp.mason"
+require "configs.lsp.lsp-config"
+require "configs.lsp.lspsaga"
+require "configs.lsp.null-ls"
+require "configs.gitsigns"
+require "configs.formatter"
+require "configs.nvim-dap"
+require "configs.lsp.nvim-lsp-installer"
+require "configs.prettier"
+require "autocommands"
+require("nvim-tree").setup {}
 --require("telescope").setup({})
 
 local opt = vim.opt
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd "colorscheme kanagawa"
 
 -- Disable mouse
 opt.mouse = ""
@@ -60,6 +60,7 @@ opt.swapfile = false
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
+opt.colorcolumn = "125"
 
 -- Search
 
@@ -67,6 +68,6 @@ opt.ignorecase = true -- Ignore case
 opt.wildignorecase = true -- Ignore case when completing file names and directories
 opt.smartcase = true -- Smart case
 
-opt.clipboard:append("unnamedplus")
-opt.shortmess:append("c") -- Hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
-opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
+opt.clipboard:append "unnamedplus"
+opt.shortmess:append "c" -- Hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
+opt.formatoptions:remove { "c", "r", "o" } -- This is a sequence of letters which describes how automatic formatting is to be done
