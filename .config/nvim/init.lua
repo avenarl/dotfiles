@@ -19,13 +19,15 @@ require "configs.formatter"
 require "configs.nvim-dap"
 require "configs.lsp.nvim-lsp-installer"
 require "configs.prettier"
+require "configs.whitespace"
+require "configs.trim"
 require "autocommands"
 require("nvim-tree").setup {}
 --require("telescope").setup({})
 
 local opt = vim.opt
 
-vim.cmd "colorscheme kanagawa"
+vim.cmd "colorscheme gruvbox"
 
 -- Disable mouse
 opt.mouse = ""
