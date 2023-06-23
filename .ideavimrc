@@ -1,7 +1,7 @@
 let mapleader= " "
 
 set hlsearch
-set scrolloff=100
+set scrolloff=3
 set ignorecase smartcase
 set showmode
 set history=1000
@@ -65,8 +65,8 @@ nmap <leader>x :q <CR>
 nmap <leader>b :tabnew <CR>
 nnoremap <c-h> <c-w>h
 nnoremap <c-k> <c-w>k
-nnoremap <a-h> gT
-nnoremap <a-l> gT
+nnoremap <c-h> gT " Left Tab
+nnoremap <c-l> gt " Right Tab
 nnoremap <c-s-tab> gT
 nnoremap <c-tab> gt
 
@@ -76,11 +76,19 @@ nnoremap <space><cr> :nohlsearch<cr>
 map <leader>l V<Action>(ReformatCode)
 
 " Finder
-map <leader>ff :action Find<cr>
+nnoremap <leader>ff :action Find<cr>
+" preserve ideavim search
+nnoremap g/ /
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>o <Action>(FileStructurePopup)
 
 imap jk <Esc>
 
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+" Built-in navigation to navigated items works better
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+" but preserve ideavim defaults
+nnoremap g<c-o> <c-o>
+nnoremap g<c-i> <c-i>
+
+" Built in search looks better
