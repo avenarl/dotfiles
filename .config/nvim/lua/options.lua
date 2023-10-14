@@ -10,6 +10,8 @@ vim.g.loaded_netrwPlugin = 1
 -- Windows
 vim.opt.splitbelow = true -- force all horizontal splits to go below current window
 vim.opt.splitright = true -- force all vertical splits to go to the right of current window
+vim.opt.autowrite = true -- Automatically save before :next, :make etc.
+vim.opt.autochdir = true -- Change CWD when user open a file
 
 --Displays
 
@@ -33,10 +35,10 @@ vim.opt.cindent = true -- Like smartindent, but stricter and more customisable
 
 -- Backups
 
-vim.opt.swapfile = false
+vim.opt.swapfile = false -- Don't use swapfile
 
 -- Apperance
-vim.opt.termguicolors = true
+vim.opt.termguicolors = true -- Enable 24-bit RGB colors
 vim.opt.background = "dark"
 vim.opt.signcolumn = "yes"
 vim.opt.colorcolumn = "125"
@@ -47,7 +49,7 @@ vim.opt.ignorecase = true -- Ignore case
 vim.opt.wildignorecase = true -- Ignore case when completing file names and directories
 vim.opt.smartcase = true -- Smart case
 
-vim.opt.clipboard:append "unnamedplus"
+vim.opt.clipboard:append "unnamedplus" -- Copy/paste to system clipboard
 vim.opt.shortmess:append "c" -- Hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
 vim.opt.formatoptions:remove { "c", "r", "o" } -- This is a sequence of letters which describes how automatic formatting is to be done
 
