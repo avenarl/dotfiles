@@ -11,6 +11,7 @@ vim.opt.splitright = true -- force all vertical splits to go to the right of cur
 
 vim.opt.number = true -- Set number
 vim.opt.relativenumber = true -- Set relative number
+vim.opt.showmatch = true -- Highlight matching parenthesis
 vim.opt.cursorline = true
 vim.opt.lazyredraw = true
 vim.opt.hidden = true
