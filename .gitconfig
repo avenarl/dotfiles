@@ -18,9 +18,9 @@
  whitespace = red reverse
 
 [color "status"]
- added = green bold
- changed = yellow bold
- untracked = red bold
+ added = yellow
+ changed = green
+ untracked = red
 [init]
  defaultBranch = master
 [filter "tabspace"]
