@@ -1,4 +1,4 @@
-vim.cmd "colorscheme kanagawa"
+vim.cmd "colorscheme gruvbox"
 
 -- Disable mouse
 vim.opt.mouse = ""
