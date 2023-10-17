@@ -22,5 +22,6 @@ require "configs.lsp.nvim-lsp-installer"
 require "configs.prettier"
 require "configs.whitespace"
 require "configs.trim"
+require "configs.obsidian"
 require("nvim-tree").setup {}
 --require("telescope").setup({})
