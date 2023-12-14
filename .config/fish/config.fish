@@ -48,7 +48,8 @@ alias tmux='tmux -2'
 #set -gx JAVA_HOME "/usr/lib/jvm/java-11-openjdk-amd64/bin/java"
 #set -gx JAVA_HOME="/usr/lib/jvm/jdk-17"
 #set -gx PATH=$PATH:$JAVA_HOME/bin
-set -x JAVA_HOME /usr/lib/jvm/jdk-17/bin/java
+#set -x JAVA_HOME /usr/lib/jvm/jdk-17/bin/java
+set -gx JAVA_HOME /usr/lib/jvm/jdk-17
 
 # spring
 set -gx PATH $PATH ~/Downloads/spring-3.0.6/bin/
