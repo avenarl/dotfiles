@@ -57,3 +57,7 @@ set -gx PATH $PATH ~/Downloads/spring-3.0.6/bin/
 # intellij
 set PATH /path/to/intellij/bin $PATH
 alias idea='idea'
+
+# Gradle Build tool
+set -gx GRADLE_HOME /opt/gradle/gradle-7.4.2
+set -gx PATH $GRADLE_HOME/bin $PATH
