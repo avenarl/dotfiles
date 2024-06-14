@@ -31,9 +31,16 @@ alias dot="git -C $HOME --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # Aliases
 alias vim='nvim'
+alias bashy='nvim ~/.config/bash/.bashrc'
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias ip="ip -color"
 
 # Eternal Bash History
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
+
+# Starship Cross-Shell Prompt
+eval "$(starship init bash)"
