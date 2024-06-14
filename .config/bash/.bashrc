@@ -26,6 +26,9 @@ export SCM_CHECK=true
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
+# Git Bare
+alias dot="git -C $HOME --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+
 # Aliases
 alias vim='nvim'
 
