@@ -44,3 +44,4 @@ export HISTFILE=~/.bash_eternal_history
 
 # Starship Cross-Shell Prompt
 eval "$(starship init bash)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
