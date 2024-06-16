@@ -1,2 +1,79 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[┌───](bold green) $username\
+$directory$git_branch$git_status
+[└─ [$os](fg:color_orange)$shell❯](bold green) """
+
+add_newline = true
+follow_symlinks = true
+scan_timeout = 10
+
+# Variables
+palette = "colors"
+
+[palettes.colors]
+color_foreground = '#FBF1C7'
+color_background0 = '#3C3836'
+color_background1 = '#665C54'
+color_green = '#9FEF00'
+color_orange = '#E95420'
+
+# Customization
+
+[hostname]
+ssh_only = false
+format = 'on [$hostname]($style) '
+disabled = false
+ssh_symbol = '🌏 '
+
+[username]
+show_always = true
+style_user = 'fg:color_background1'
+style_root = 'fg:color_green bold'
+format = '👨‍💻[$user]($style) '
+disabled = false
+
+[directory]
+home_symbol = '🏠 ~'
+truncation_length = 3
+fish_style_pwd_dir_length=2
+read_only_style = '197'
+read_only = ' 🔒 '
+format = 'in [$path]($style)[$read_only]($read_only_style) '
+
+[git_branch]
+format = "at [$symbol$branch]($style)"
+symbol = '🌱 '
+
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = 'bold green'
+conflicted = '🏳'
+up_to_date = ''
+untracked = '⚠ '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = '🔧 '
+deleted = '🗑️ '
+
+[shell]
+disabled = false
+bash_indicator = "  "
+
+[os]
+disabled = false
+format = "$symbol "
+symbols.Ubuntu = ""
+
+[memory_usage]
+symbol = "󰍛 "
+disabled = true
+style='bold dimmed white'
+threshold = 1
+format = "$symbol [${ram}(|${swap})]($style) "
