@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+# Ble.sh source
+[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach
 
+# Bash related
 case $- in
   *i*) ;;
     *) return;;
@@ -56,3 +59,6 @@ export HISTFILE=~/.bash_eternal_history
 # Starship Cross-Shell Prompt
 eval "$(starship init bash)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+# Ble.sh - Bash Line Editor
+[[ ${BLE_VERSION-} ]] && ble-attach

@@ -1,0 +1,3 @@
+## Editor
+bleopt editor = vim
+bleopt hgihlight_syntax =
