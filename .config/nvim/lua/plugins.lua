@@ -1,142 +1,130 @@
-vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system {
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  }
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require("packer").startup(function(use)
-  -- Packer can manage itself
-  use "wbthomason/packer.nvim"
+vim.g.mapleader = " " -- Set map leader to <space>
+
+local plugins = {
+  { "wbthomason/packer.nvim" },
 
   -- Colorscheme
-  use "rebelot/kanagawa.nvim"
-  use "navarasu/onedark.nvim"
-  use "folke/tokyonight.nvim"
-  use "safv12/andromeda.vim"
-  use "catppuccin/catppuccin"
-  use "ellisonleao/gruvbox.nvim"
+  { "rebelot/kanagawa.nvim" },
+  { "navarasu/onedark.nvim" },
+  { "folke/tokyonight.nvim" },
+  { "safv12/andromeda.vim" },
+  { "catppuccin/catppuccin" },
+  { "ellisonleao/gruvbox.nvim" },
 
   -- Whitespaces
-  use "lukoshkin/highlight-whitespace"
-  use "johnfrankmorgan/whitespace.nvim"
-  use {
-    "cappyzawa/trim.nvim",
-    config = function()
-      require("trim").setup {}
-    end,
-  }
-  use {
-    "mcauley-penney/tidy.nvim",
-    config = true,
-  }
+  { "lukoshkin/highlight-whitespace" },
+  { "johnfrankmorgan/whitespace.nvim" },
+  { "cappyzawa/trim.nvim" },
+  { "mcauley-penney/tidy.nvim" },
 
   -- Higlighting Syntax
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-  use "nvim-treesitter/nvim-treesitter-refactor"
+  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter-refactor" },
 
   -- Hexcode color identifier
-  use "norcalli/nvim-colorizer.lua"
+  { "norcalli/nvim-colorizer.lua" },
 
   -- Icons
-  use "kyazdani42/nvim-web-devicons"
+  { "kyazdani42/nvim-web-devicons" },
 
   -- File finder
-  use "ibhagwan/fzf-lua"
+  { "ibhagwan/fzf-lua" },
 
-  -- Statusline requires Icons
-  use {
+  -- Statusline dependencies Icons
+  {
     "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
-  }
+    dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
+  },
 
   -- Navigation
-  use "kyazdani42/nvim-tree.lua"
+  { "kyazdani42/nvim-tree.lua" },
 
   -- Auto Completion
-  use "hrsh7th/nvim-cmp" -- completion plugin
-  use "hrsh7th/cmp-buffer" -- source for text in buffer
-  use "hrsh7th/cmp-path" -- source for file system paths
+  { "hrsh7th/nvim-cmp" }, -- completion plugin
+  { "hrsh7th/cmp-buffer" }, -- source for text in buffer
+  { "hrsh7th/cmp-path" }, -- source for file system paths
 
   -- snippets
-  use "L3MON4D3/LuaSnip" -- snippet engine
-  use "saadparwaiz1/cmp_luasnip" -- for autocompletion
-  use "rafamadriz/friendly-snippets" -- useful snippets
+  { "L3MON4D3/LuaSnip" }, -- snippet engine
+  { "saadparwaiz1/cmp_luasnip" }, -- for autocompletion
+  { "rafamadriz/friendly-snippets" }, -- ful snippets
 
   -- Brackets
-  use "windwp/nvim-autopairs"
+  { "windwp/nvim-autopairs" },
 
   -- Tags
-  use "windwp/nvim-ts-autotag"
+  { "windwp/nvim-ts-autotag" },
 
   -- Managing and installing lsp servers
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
 
   -- LSP servers configuration
-  use "neovim/nvim-lspconfig" -- language servers
-  use "hrsh7th/cmp-nvim-lsp" -- autocompletion
-  use { "glepnir/lspsaga.nvim", branch = "main" } -- lsp uis
-  use "jose-elias-alvarez/typescript.nvim" -- typescript functionality
-  use "onsails/lspkind.nvim" -- vs-code like icons for autocompletion
+  { "neovim/nvim-lspconfig" }, -- language servers
+  { "hrsh7th/cmp-nvim-lsp" }, -- autocompletion
+  { "glepnir/lspsaga.nvim", branch = "main" }, -- lsp uis
+  { "jose-elias-alvarez/typescript.nvim" }, -- typescript functionality
+  { "onsails/lspkind.nvim" }, -- vs-code like icons for autocompletion
 
   -- formatting & linting
-  use "jose-elias-alvarez/null-ls.nvim" -- configure formatters & linters
-  use "jayp0521/mason-null-ls.nvim" -- bridges gap b/w mason & null-ls
+  { "jose-elias-alvarez/null-ls.nvim" }, -- configure formatters & linters
+  { "jayp0521/mason-null-ls.nvim" }, -- bridges gap b/w mason & null-ls
 
   -- Buffer
-  use {
+  {
     "akinsho/bufferline.nvim",
-    requires = { "kyazdani42/nvim-web-devicons" },
-  }
+    dependencies = { "kyazdani42/nvim-web-devicons" },
+  },
 
   -- Notetaking
-  use "abeleinin/papyrus"
-  use "vim-pandoc/vim-pandoc-syntax"
+  { "abeleinin/papyrus" },
+  { "vim-pandoc/vim-pandoc-syntax" },
 
   -- Git stuff
-  use "nvim-lua/plenary.nvim"
-  use { "lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim" }
+  { "nvim-lua/plenary.nvim" },
+  { "lewis6991/gitsigns.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
   -- Idention
-  use "lukas-reineke/indent-blankline.nvim"
+  { "lukas-reineke/indent-blankline.nvim" },
 
   -- Terminal
-  use "akinsho/toggleterm.nvim"
+  { "akinsho/toggleterm.nvim" },
 
   -- tmux & split window Navigation
-  use "christoomey/vim-tmux-navigator"
+  { "christoomey/vim-tmux-navigator" },
 
   -- Syntax highlighting
-  use "sheerun/vim-polyglot"
+  { "sheerun/vim-polyglot" },
 
   -- Svelte syntax and indention
-  use "evanleck/vim-svelte"
-  use "mhartington/formatter.nvim"
-  use "MunifTanjim/prettier.nvim"
+  { "evanleck/vim-svelte" },
+  { "mhartington/formatter.nvim" },
+  { "MunifTanjim/prettier.nvim" },
 
   -- Java
-  use "mfussenegger/nvim-jdtls"
-  use "mfussenegger/nvim-dap" -- Debugging
-  use "rcarriga/cmp-dap"
-  use "williamboman/nvim-lsp-installer"
+  { "mfussenegger/nvim-jdtls" },
+  { "mfussenegger/nvim-dap" }, -- Debugging
+  { "rcarriga/cmp-dap" },
+  { "williamboman/nvim-lsp-installer" },
 
   -- SQL
-  use "nanotee/sqls.nvim"
+  { "nanotee/sqls.nvim" },
 
-  -- Bundle all the "boilerplate code"
-  use "VonHeikemen/lsp-zero.nvim"
+  -- Bundle all the 'boilerplate code'
+  { "VonHeikemen/lsp-zero.nvim" },
+}
 
-  -- Obsidian Markdown
-  use {
-    "epwalsh/obsidian.nvim",
-    requires = {
-      -- Required.
-      "nvim-lua/plenary.nvim",
-
-      -- see below for full list of optional dependencies 👇
-    },
-    config = function()
-      require("obsidian").setup {
-        dir = "~/my-vault",
-
-        -- see below for full list of options 👇
-      }
-    end,
-  }
-end)
+require("lazy").setup(plugins, {})
