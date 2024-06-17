@@ -1,4 +1,4 @@
-require("nvim-autopairs").setup {
+require("nvim-autopairs").init {
   disable_filetype = { "TelescopePrompt", "vim" },
   fast_wrap = {
     chars = { "{", "[", "(", '"', "'" },

@@ -3,7 +3,7 @@ local ftMap = {
   python = { "indent" },
   git = "",
 }
-require("ufo").setup {
+require("ufo").init {
   open_fold_hl_timeout = 150,
   close_fold_kinds = { "imports", "comment" },
   preview = {

@@ -1,28 +1,9 @@
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system {
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  }
-end
-vim.opt.rtp:prepend(lazypath)
-
 vim.g.mapleader = " " -- Set map leader to <space>
 
 local plugins = {
-  { "wbthomason/packer.nvim" },
 
   -- Colorscheme
-  { "rebelot/kanagawa.nvim" },
-  { "navarasu/onedark.nvim" },
   { "folke/tokyonight.nvim" },
-  { "safv12/andromeda.vim" },
-  { "catppuccin/catppuccin" },
-  { "ellisonleao/gruvbox.nvim" },
 
   -- Whitespaces
   { "lukoshkin/highlight-whitespace" },
@@ -109,19 +90,11 @@ local plugins = {
   -- Syntax highlighting
   { "sheerun/vim-polyglot" },
 
-  -- Svelte syntax and indention
-  { "evanleck/vim-svelte" },
-  { "mhartington/formatter.nvim" },
-  { "MunifTanjim/prettier.nvim" },
-
   -- Java
   { "mfussenegger/nvim-jdtls" },
   { "mfussenegger/nvim-dap" }, -- Debugging
   { "rcarriga/cmp-dap" },
   { "williamboman/nvim-lsp-installer" },
-
-  -- SQL
-  { "nanotee/sqls.nvim" },
 
   -- Bundle all the 'boilerplate code'
   { "VonHeikemen/lsp-zero.nvim" },

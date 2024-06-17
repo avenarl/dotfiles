@@ -1,4 +1,4 @@
-require("lualine").setup {
+require("lualine").init {
   options = {
     icons_enabled = true,
     theme = "gruvbox-material",

@@ -12,7 +12,7 @@ local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- configure null_ls
-null_ls.setup({
+null_ls.init({
 	-- setup formatters & linters
 	sources = {
 		--  to disable file types use

@@ -3,7 +3,7 @@ if not status then
 	return
 end
 
-prettier.setup({
+prettier.init({
 	bin = "prettierd",
 	filetype = {
 		"html",

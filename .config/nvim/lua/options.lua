@@ -1,10 +1,12 @@
-vim.cmd "colorscheme gruvbox"
+--vim.cmd "colorscheme kanagawa"
 
 -- Disable mouse
 vim.opt.mouse = ""
 
+vim.g.autoformat = false
+
 -- Disable netrw
-vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Windows

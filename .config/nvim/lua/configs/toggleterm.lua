@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-toggleterm.setup({
+toggleterm.init({
 	size = 20,
 	open_mapping = [[<C-t>]],
 	hide_numbers = true,

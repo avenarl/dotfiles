@@ -54,7 +54,7 @@ end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- SQL
-require("lspconfig").sqls.setup {
+require("lspconfig").sqls.init {
   on_attach = function(client, bufnr)
     require("sqls").on_attach(client, bufnr)
   end,

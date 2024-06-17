@@ -17,9 +17,9 @@ if not mason_null_ls_status then
 end
 
 -- enable mason
-mason.setup()
+mason.init()
 
-mason_lspconfig.setup({
+mason_lspconfig.init({
 	-- list of servers for mason to install
 	ensure_installed = {
 		"tsserver",

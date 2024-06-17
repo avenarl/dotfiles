@@ -1,4 +1,4 @@
-require("whitespace-nvim").setup {
+require("whitespace-nvim").init {
   -- configuration options and their defaults
 
   -- `highlight` configures which highlight is used to display

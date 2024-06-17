@@ -1,4 +1,4 @@
-require("bufferline").setup {
+require("bufferline").init {
   options = {
     numbers = "none",
     diagnostics = "nvim_lsp",

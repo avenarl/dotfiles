@@ -78,10 +78,6 @@ vim.cmd [[
 	nnoremap <silent><S-Tab> :BufferLineCyclePrev<CR>
 ]]
 
--- Notetaking (Papyrus)
-vim.g.papyrus_latex_engine = "xelatex"
-vim.g.papyrus_viewer = "zathura"
-
 -- Tmux navigation
 map("n", "<C-h>", ":<C-U>TmuxNavigateLeft<cr>") -- Left tmux navigation
 map("n", "<C-j>", ":<C-U>TmuxNavigateDown<cr>") -- Down tmux navigation
