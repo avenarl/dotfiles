@@ -26,3 +26,5 @@
 [filter "tabspace"]
  smudge = unexpand --tabs=1 --first-only
  clean = expand --tabs=1 --initial
+[http]
+	postBuffer = 524288000
