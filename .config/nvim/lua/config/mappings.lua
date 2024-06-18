@@ -5,44 +5,44 @@ vim.g.toggleterm_terminal_mapping = "<C-t>" -- For terminal
 
 -- Navigation within insert mode
 
-map("i", "jk", "<Esc>") -- Escape
-map("i", "<C-h>", "<Left>") -- Backward
-map("i", "<C-e>", "<End>") -- End-of-line
-map("i", "<C-l>", "<Right>") -- Forward
-map("i", "<C-k>", "<Up>") -- Next line
-map("i", "<C-j>", "<Down>") -- Previous line
-map("i", "<C-a>", "<Esc>^i") -- Start of line
+vim.keymap.set("i", "<C-h>", "<Left>") -- Backward
+vim.keymap.set("i", "jk", "<Esc>") -- Escape
+vim.keymap.set("i", "<C-e>", "<End>") -- End-of-line
+vim.keymap.set("i", "<C-l>", "<Right>") -- Forward
+vim.keymap.set("i", "<C-k>", "<Up>") -- Next line
+vim.keymap.set("i", "<C-j>", "<Down>") -- Previous line
+vim.keymap.set("i", "<C-a>", "<Esc>^i") -- Start of line
 
 -- Buffers in normal mode
 
-map("n", "<C-s>", ":w <CR>") -- Save file using :w
-map("n", "<C-a>", ":%y+ <CR>") -- Copy all contents of the current buffer
-map("n", "<leader>n", ":set nu! <CR>") -- Toggle numbers
-map("n", "<leader>x", ":q <CR>") -- Close buffer
-map("n", "<S-t>", ":enew <CR>") -- Open a new buffer
-map("n", "<C-t>b", ":tabnew <CR>") -- Open a new vim tab
-map("n", "<TAB>", ":BufferLineCycleNext <CR>") -- Next buffer
-map("n", "<S-Tab>", ":BufferLineCycleNext <CR>") -- Previous buffer
-map("n", "<C-w>", ":bdelete <CR>") -- Close the displaying buffer
+vim.keymap.set("n", "<C-s>", ":w <CR>") -- Save file using :w
+vim.keymap.set("n", "<C-a>", ":%y+ <CR>") -- Copy all contents of the current buffer
+vim.keymap.set("n", "<leader>n", ":set nu! <CR>") -- Toggle numbers
+vim.keymap.set("n", "<leader>x", ":q <CR>") -- Close buffer
+vim.keymap.set("n", "<S-t>", ":enew <CR>") -- Open a new buffer
+vim.keymap.set("n", "<C-t>b", ":tabnew <CR>") -- Open a new vim tab
+vim.keymap.set("n", "<TAB>", ":BufferLineCycleNext <CR>") -- Next buffer
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCycleNext <CR>") -- Previous buffer
+vim.keymap.set("n", "<C-w>", ":bdelete <CR>") -- Close the displaying buffer
 
 -- Delete
-map("i", "<C-d>", "<C-o>diw") -- delete a word
+vim.keymap.set("i", "<C-d>", "<C-o>diw") -- delete a word
 
 -- Toggle Terminal
-map("n", "<C-t>", ":terminal<CR>")
+vim.keymap.set("n", "<C-t>", ":terminal<CR>")
 
 -- Toggle comments
 
-map("n", "<leader>/", ":CommentToggle <CR>")
-map("v", "<leader>/", ":CommentToggle <CR>")
+vim.keymap.set("n", "<leader>/", ":CommentToggle <CR>")
+vim.keymap.set("v", "<leader>/", ":CommentToggle <CR>")
 
 -- Window navigation
 
-map("n", "<C-h>", "<C-w>h") -- Move left
-map("n", "<C-h>", "<C-w>l") -- Move right
-map("n", "<C-k>", "<C-w>k") -- Move up
-map("n", "<C-j>", "<C-w>j") -- Move down
-map("i", "<C-Right>", "<C-p>") -- Move to next word
+vim.keymap.set("n", "<C-h>", "<C-w>h") -- Move left
+vim.keymap.set("n", "<C-h>", "<C-w>l") -- Move right
+vim.keymap.set("n", "<C-k>", "<C-w>k") -- Move up
+vim.keymap.set("n", "<C-j>", "<C-w>j") -- Move down
+vim.keymap.set("i", "<C-Right>", "<C-p>") -- Move to next word
 
 -- Terminal
 function _G.set_terminal_keymaps()
@@ -58,9 +58,9 @@ vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
 
 -- Nvim Tree
 
-map("n", "<C-n>", ":NvimTreeToggle <CR>") -- Toggle Tree
-map("n", "<leader>r", ":NvimTreeRefresh <CR>") -- Refresh Tree
-map("n", "<leader>n", ":NvimTreeFindFile <CR>") -- Find file
+vim.keymap.set("n", "<C-n>", ":NvimTreeToggle <CR>") -- Toggle Tree
+vim.keymap.set("n", "<leader>r", ":NvimTreeRefresh <CR>") -- Refresh Tree
+vim.keymap.set("n", "<leader>n", ":NvimTreeFindFile <CR>") -- Find file
 
 -- Telescope
 
@@ -70,7 +70,7 @@ map("n", "<leader>n", ":NvimTreeFindFile <CR>") -- Find file
 --map("n", "<leader>fh", "<cmd> Telescope help_tags <CR>") -- Help tags
 
 -- Fzf
-map("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>")
+vim.keymap.set("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>")
 
 -- Bufferline
 vim.cmd [[
@@ -79,10 +79,10 @@ vim.cmd [[
 ]]
 
 -- Tmux navigation
-map("n", "<C-h>", ":<C-U>TmuxNavigateLeft<cr>") -- Left tmux navigation
-map("n", "<C-j>", ":<C-U>TmuxNavigateDown<cr>") -- Down tmux navigation
-map("n", "<C-k>", ":<C-U>TmuxNavigateUp<cr>") -- Up tmux navigation
-map("n", "<C-l>", ":<C-U>TmuxNavigateRight<cr>") -- Right tmux navigation
+vim.keymap.set("n", "<C-h>", ":<C-U>TmuxNavigateLeft<cr>") -- Left tmux navigation
+vim.keymap.set("n", "<C-j>", ":<C-U>TmuxNavigateDown<cr>") -- Down tmux navigation
+vim.keymap.set("n", "<C-k>", ":<C-U>TmuxNavigateUp<cr>") -- Up tmux navigation
+vim.keymap.set("n", "<C-l>", ":<C-U>TmuxNavigateRight<cr>") -- Right tmux navigation
 
 -- Change double quote to single quote
 vim.api.nvim_set_keymap(
@@ -198,3 +198,12 @@ function attach_to_debug()
 end
 
 key_map("n", "<leader>da", ":lua attach_to_debug()<CR>")
+
+
+-- Plugin related mappings
+-- local M = {
+-- transparent = {
+--  {"<leader>ut", "<cmd>TransparentToggle<CR>" },
+-- }
+-- }
+-- return M
