@@ -12,6 +12,12 @@ return {
     servers = {
       bashls = {},
       cssls = {},
+      html = {},
+      gradle_ls = {},
+      groovyls = {},
+      lua_ls = {},
+      jdtls = {},
+      jsonls = {},
       dockerls = {},
       tsserver = {},
       rust_analyzer = {},
