@@ -3,10 +3,13 @@
 
 format = """
 [┌───](bold green) $username\
-$directory$git_branch$git_status\
-$package
+$directory$git_branch$git_status$git_metrics\
+$package\
+$memory_usage$cmd_duration
 [┨](bold green)
-[└─ [$os](fg:color_orange)$shell❯](bold green) """
+[└─ [$os](fg:color_orange)$shell$character](bold green) """
+
+# right_format = """$directory"""
 
 add_newline = true
 follow_symlinks = true
@@ -32,9 +35,9 @@ ssh_symbol = '🌏 '
 
 [username]
 show_always = true
-style_user = 'fg:color_background1'
+style_user = 'fg:color_green bold'
 style_root = 'fg:color_green bold'
-format = '👨‍💻[$user]($style) '
+format = "[💻 $user]($style) "
 disabled = false
 
 [directory]
@@ -46,8 +49,12 @@ read_only_style = '197'
 read_only = ' 🔒 '
 format = 'in [$path]($style)[$read_only]($read_only_style) '
 
+[cmd_duration]
+show_milliseconds = true
+format = "took [$duration](bold yellow)"
+
 [git_branch]
-format = "at [$symbol$branch]($style)"
+format = "on [$symbol$branch]($style) "
 symbol = '🌱 '
 
 [git_status]
@@ -87,32 +94,4 @@ format = "$symbol [${ram}(|${swap})]($style) "
 [package]
 format = " [📦 $version](bold green)"
 
-[docker_context]
-format = "via [🐋 $context](blue bold)"
-disabled = false
-only_with_files = true
-detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
-detect_folders = true
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
-
-[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
-threshold = 10
-style = "bold red"
-
-[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
-threshold = 30
-style = "bold yellow"
-
-[[battery.display]]
-threshold = 100
-style = "bold green"
-
-[localip]
-ssh_only = false
-format = "@[$localipv4](purple) "
-disabled = false
-deleted_style = "bold red"
