@@ -9,7 +9,7 @@ $memory_usage$cmd_duration
 [┨](bold green)
 [└─ [$os](fg:color_orange)$shell$character](bold green) """
 
-# right_format = """$directory"""
+right_format = """$directory"""
 
 add_newline = true
 follow_symlinks = true
@@ -35,9 +35,9 @@ ssh_symbol = '🌏 '
 
 [username]
 show_always = true
-style_user = 'fg:color_green bold'
-style_root = 'fg:color_green bold'
-format = "[💻 $user]($style) "
+style_user = 'fg:green'
+style_root = 'fg:green'
+format = "[👨‍💻$user]($style) "
 disabled = false
 
 [directory]
