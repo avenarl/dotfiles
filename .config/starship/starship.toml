@@ -4,12 +4,13 @@
 format = """
 [┌───](bold green) $username\
 $directory$git_branch$git_status$git_metrics\
-$package\
-$memory_usage$cmd_duration
+$package
 [┨](bold green)
 [└─ [$os](fg:color_orange)$shell$character](bold green) """
 
-right_format = """$directory"""
+right_format = """
+$memory_usage$cmd_duration
+"""
 
 add_newline = true
 follow_symlinks = true
@@ -41,10 +42,9 @@ format = "[👨‍💻$user]($style) "
 disabled = false
 
 [directory]
-home_symbol = '🏠 ~'
+home_symbol = '🏠 $HOME'
 truncation_length = 3
 truncation_symbol = "…/"
-fish_style_pwd_dir_length=2
 read_only_style = '197'
 read_only = ' 🔒 '
 format = 'in [$path]($style)[$read_only]($read_only_style) '
@@ -94,4 +94,9 @@ format = "$symbol [${ram}(|${swap})]($style) "
 [package]
 format = " [📦 $version](bold green)"
 
+## Right Prompt
 
+[time]
+time_format = '%T'
+utc_time_offset = '-5'
+time_range = '10:00:00-14:00:00'

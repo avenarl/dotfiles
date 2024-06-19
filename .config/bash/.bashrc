@@ -32,8 +32,8 @@ source "$BASH_IT"/bash_it.sh
 alias dot="git -C $HOME --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # Aliases
-alias vim='nvim'
-alias bashy='nvim ~/.config/bash/.bashrc'
+alias vim="nvim"
+alias bashy="nvim ~/.config/bash/.bashrc"
 alias ls="ls -a --color=auto"
 alias grep="grep --color=auto"
 alias ip="ip -color"
