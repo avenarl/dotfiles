@@ -26,6 +26,12 @@ PROMPT_COMMAND='history -a'
 # Allow ctrl-S for history navigation (with ctrl-R)
 [[ $- == '1' ]] && stty -ixon
 
+# Set the default editor
+export EDITOR=nvim
+export VISUAL=nvim
+alias nano='edit'
+alias vim='nvim'
+
 # Path to the bash it configuration
 export BASH_IT="/home/raven/.bash_it"
 
@@ -39,7 +45,6 @@ source "$BASH_IT"/bash_it.sh
 alias dot="git -C $HOME --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # Aliases
-alias vim="nvim"
 alias bashy="nvim ~/.config/bash/.bashrc"
 alias ls="ls -a --color=auto"
 alias grep="grep --color=auto"
