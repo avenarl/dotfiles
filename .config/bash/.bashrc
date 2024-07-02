@@ -23,6 +23,9 @@ export HISTFILE=~/.bash_eternal_history
 shopt -s histappend
 PROMPT_COMMAND='history -a'
 
+# Allow ctrl-S for history navigation (with ctrl-R)
+[[ $- == '1' ]] && stty -ixon
+
 # Path to the bash it configuration
 export BASH_IT="/home/raven/.bash_it"
 
