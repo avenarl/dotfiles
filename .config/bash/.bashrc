@@ -19,6 +19,10 @@ HISTFILESIZE=2000
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE=~/.bash_eternal_history
 
+# Will have an old session history when starting a new terminal instead of overwriting
+shopt -s histappend
+PROMPT_COMMAND='history -a'
+
 # Path to the bash it configuration
 export BASH_IT="/home/raven/.bash_it"
 
@@ -41,4 +45,3 @@ alias ip="ip -color"
 # Starship Cross-Shell Prompt
 eval "$(starship init bash)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
