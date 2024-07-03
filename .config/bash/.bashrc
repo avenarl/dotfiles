@@ -105,6 +105,9 @@ alias lla='ls -Al'                # List and Hidden Files
 alias las='ls -A'                 # Hidden Files
 alias lls='ls -l'                 # List
 
+# Search command line history
+alias h="history | grep "
+
 # Starship Cross-Shell Prompt
 eval "$(starship init bash)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
