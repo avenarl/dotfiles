@@ -108,6 +108,9 @@ alias lls='ls -l'                 # List
 # Search command line history
 alias h="history | grep "
 
+# Search files in the current folder
+alias find="find . | grep "
+
 # Starship Cross-Shell Prompt
 eval "$(starship init bash)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
