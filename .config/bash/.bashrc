@@ -71,11 +71,39 @@ source "$BASH_IT"/bash_it.sh
 # Git Bare
 alias dot="git -C $HOME --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
-# Aliases
-alias bashy="nvim ~/.config/bash/.bashrc"
+#######################################################
+# GENERAL ALIASES
+#######################################################
+
+# Edit .bashrc file using nvim
+alias vibrc="edit ~/.config/bash/.bashrc"
+
+# Show help for this .bashrc file
+alias hlp='less ~/.bashrc_help'
+
+# Show the date alias
+alias today='date "+%m-%d-%Y %A %T %Z"'
 alias ls="ls -a --color=auto"
 alias grep="grep --color=auto"
 alias ip="ip -color"
+
+# Alias's for multiple directory listing commands
+alias la='ls -Alh'                # show hidden files alias ls='ls -aFh --color=always' # add colors and file type extensions
+alias lx='ls -lXBh'               # sort by extension
+alias lk='ls -lSrh'               # sort by size
+alias lc='ls -ltcrh'              # sort by change time
+alias lu='ls -lturh'              # sort by access time
+alias lr='ls -lRh'                # recursive ls
+alias lt='ls -ltrh'               # sort by date
+alias lm='ls -alh |more'          # pipe through 'more'
+alias lw='ls -xAh'                # wide listing format
+alias ll='ls -Fls'                # long listing format
+alias labc='ls -lap'              # alphabetical sort
+alias lf="ls -l | egrep -v '^d'"  # files only
+alias ldir="ls -l | egrep '^d'"   # directories only
+alias lla='ls -Al'                # List and Hidden Files
+alias las='ls -A'                 # Hidden Files
+alias lls='ls -l'                 # List
 
 # Starship Cross-Shell Prompt
 eval "$(starship init bash)"
