@@ -111,6 +111,9 @@ alias h="history | grep "
 # Search files in the current folder
 alias find="find . | grep "
 
+# Check if a command is aliased, a file, or a built-in command
+alias checkcommand="type -t"
+
 # Starship Cross-Shell Prompt
 eval "$(starship init bash)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
