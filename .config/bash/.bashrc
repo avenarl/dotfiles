@@ -154,6 +154,159 @@ ftext() {
 	grep -iIHrn --color=always "$1" . | less -r
 }
 
+# Show the current distribution
+distribution ()
+{
+	local dtype="unknown"  # Default to unknown
+
+	# Use /etc/os-release for modern distro identification
+	if [ -r /etc/os-release ]; then
+		source /etc/os-release
+		case $ID in
+			fedora|rhel|centos)
+				dtype="redhat"
+				;;
+			sles|opensuse*)
+				dtype="suse"
+				;;
+			ubuntu|debian)
+				dtype="debian"
+				;;
+			gentoo)
+				dtype="gentoo"
+				;;
+			arch|manjaro)
+				dtype="arch"
+				;;
+			slackware)
+				dtype="slackware"
+				;;
+			*)
+				# Check ID_LIKE only if dtype is still unknown
+				if [ -n "$ID_LIKE" ]; then
+					case $ID_LIKE in
+						*fedora*|*rhel*|*centos*)
+							dtype="redhat"
+							;;
+						*sles*|*opensuse*)
+							dtype="suse"
+							;;
+						*ubuntu*|*debian*)
+							dtype="debian"
+							;;
+						*gentoo*)
+							dtype="gentoo"
+							;;
+						*arch*)
+							dtype="arch"
+							;;
+						*slackware*)
+							dtype="slackware"
+							;;
+					esac
+				fi
+
+				# If ID or ID_LIKE is not recognized, keep dtype as unknown
+				;;
+		esac
+	fi
+
+	echo $dtype
+}
+
+# Show the current version of the operating system
+ver() {
+	local dtype
+	dtype=$(distribution)
+
+	case $dtype in
+		"redhat")
+			if [ -s /etc/redhat-release ]; then
+				cat /etc/redhat-release
+			else
+				cat /etc/issue
+			fi
+			uname -a
+			;;
+		"suse")
+			cat /etc/SuSE-release
+			;;
+		"debian")
+			lsb_release -a
+			;;
+		"gentoo")
+			cat /etc/gentoo-release
+			;;
+		"arch")
+			cat /etc/os-release
+			;;
+		"slackware")
+			cat /etc/slackware-version
+			;;
+		*)
+			if [ -s /etc/issue ]; then
+				cat /etc/issue
+			else
+				echo "Error: Unknown distribution"
+				exit 1
+			fi
+			;;
+	esac
+}
+
+# Automatically install the needed support files for this .bashrc file
+install_bashrc_support() {
+	local dtype
+	dtype=$(distribution)
+
+	case $dtype in
+		"redhat")
+			sudo yum install multitail tree zoxide trash-cli fzf bash-completion fastfetch
+			;;
+		"suse")
+			sudo zypper install multitail tree zoxide trash-cli fzf bash-completion fastfetch
+			;;
+		"debian")
+			sudo apt-get install multitail tree zoxide trash-cli fzf bash-completion
+			# Fetch the latest fastfetch release URL for linux-amd64 deb file
+			FASTFETCH_URL=$(curl -s https://api.github.com/repos/fastfetch-cli/fastfetch/releases/latest | grep "browser_download_url.*linux-amd64.deb" | cut -d '"' -f 4)
+
+			# Download the latest fastfetch deb file
+			curl -sL $FASTFETCH_URL -o /tmp/fastfetch_latest_amd64.deb
+
+			# Install the downloaded deb file using apt-get
+			sudo apt-get install /tmp/fastfetch_latest_amd64.deb
+			;;
+		"arch")
+			sudo paru multitail tree zoxide trash-cli fzf bash-completion fastfetch
+			;;
+		"slackware")
+			echo "No install support for Slackware"
+			;;
+		*)
+			echo "Unknown distribution"
+			;;
+	esac
+}
+
+# IP address lookup
+alias whatismyip="whatsmyip"
+function whatsmyip ()
+{
+	# Internal IP Lookup.
+	if [ -e /sbin/ip ]; then
+		echo -n "Internal IP: "
+		/sbin/ip addr show wlan0 | grep "inet " | awk -F: '{print $1}' | awk '{print $2}'
+	else
+		echo -n "Internal IP: "
+		/sbin/ifconfig wlan0 | grep "inet " | awk -F: '{print $1} |' | awk '{print $2}'
+	fi
+
+	# External IP Lookup
+	echo -n "External IP: "
+	curl -s ifconfig.me
+}
+
 # Starship Cross-Shell Prompt
 eval "$(starship init bash)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
