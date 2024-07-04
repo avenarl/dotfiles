@@ -75,6 +75,9 @@ alias dot="git -C $HOME --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 # GENERAL ALIASES
 #######################################################
 
+# Return to home ~
+alias home="cd ~"
+
 # Edit .bashrc file using nvim
 alias vimbash="edit ~/.config/bash/.bashrc"
 
