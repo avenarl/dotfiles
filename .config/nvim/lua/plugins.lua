@@ -25,15 +25,6 @@ return require("packer").startup(function(use)
     end,
   }
 
-  use {
-    "tadmccorkle/markdown.nvim",
-    config = function()
-      require("markdown").setup {
-        -- configuration here or empty for defaults
-      }
-    end,
-  }
-
   -- Whitespaces
   use { "lukoshkin/highlight-whitespace" }
   use { "johnfrankmorgan/whitespace.nvim" }
