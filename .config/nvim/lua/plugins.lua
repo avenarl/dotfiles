@@ -3,9 +3,9 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself	
-  use { "wbthomason/packer.nvim"}
+return require("packer").startup(function(use)
+  -- Packer can manage itself
+  use { "wbthomason/packer.nvim" }
 
   -- Colorscheme
   use { "rebelot/kanagawa.nvim" }
@@ -14,6 +14,17 @@ return require('packer').startup(function(use)
   use { "safv12/andromeda.vim" }
   use { "catppuccin/catppuccin" }
   use { "ellisonleao/gruvbox.nvim" }
+
+  -- Markdown
+  use {
+    "MeanderingProgrammer/markdown.nvim",
+    as = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
+    after = { "nvim-treesitter" }, -- Mandatory
+    requires = { "nvim-tree/nvim-web-devicons", opt = true }, -- Optional but recommended
+    config = function()
+      require("render-markdown").setup {}
+    end,
+  }
 
   -- Whitespaces
   use { "lukoshkin/highlight-whitespace" }
@@ -37,7 +48,7 @@ return require('packer').startup(function(use)
   -- Statusline dependencies Icons
   use {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons", opt = true }
+    dependencies = { "kyazdani42/nvim-web-devicons", opt = true },
   }
 
   -- Navigation
@@ -67,17 +78,17 @@ return require('packer').startup(function(use)
   use { "neovim/nvim-lspconfig" } -- language servers
   use { "hrsh7th/cmp-nvim-lsp" } -- autocompletion
   use { "glepnir/lspsaga.nvim", branch = "main" } -- lsp uis
-  use{ "jose-elias-alvarez/typescript.nvim" } -- typescript functionality
+  use { "jose-elias-alvarez/typescript.nvim" } -- typescript functionality
   use { "onsails/lspkind.nvim" } -- vs-code like icons for autocompletion
 
   -- formatting & linting
   use { "jose-elias-alvarez/null-ls.nvim" } -- configure formatters & linters
-  use{ "jayp0521/mason-null-ls.nvim" } -- bridges gap b/w mason & null-ls
+  use { "jayp0521/mason-null-ls.nvim" } -- bridges gap b/w mason & null-ls
 
   -- Buffer
   use {
     "akinsho/bufferline.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons" }
+    dependencies = { "kyazdani42/nvim-web-devicons" },
   }
 
   -- Notetaking
@@ -89,32 +100,31 @@ return require('packer').startup(function(use)
   use { "lewis6991/gitsigns.nvim", dependencies = "nvim-lua/plenary.nvim" }
 
   -- Idention
-  use{ "lukas-reineke/indent-blankline.nvim" }
+  use { "lukas-reineke/indent-blankline.nvim" }
 
   -- Terminal
-  use{ "akinsho/toggleterm.nvim" }
+  use { "akinsho/toggleterm.nvim" }
 
   -- tmux & split window Navigation
-  use{ "christoomey/vim-tmux-navigator" }
+  use { "christoomey/vim-tmux-navigator" }
 
   -- Syntax highlighting
-  use{ "sheerun/vim-polyglot" }
+  use { "sheerun/vim-polyglot" }
 
   -- Svelte syntax and indention
-  use{ "evanleck/vim-svelte" }
-  use{ "mhartington/formatter.nvim" }
-  use{ "MunifTanjim/prettier.nvim" }
+  use { "evanleck/vim-svelte" }
+  use { "mhartington/formatter.nvim" }
+  use { "MunifTanjim/prettier.nvim" }
 
   -- Java
-  use{ "mfussenegger/nvim-jdtls" }
-  use{ "mfussenegger/nvim-dap" } -- Debugging
-  use{ "rcarriga/cmp-dap" }
-  use{ "williamboman/nvim-lsp-installer" }
+  use { "mfussenegger/nvim-jdtls" }
+  use { "mfussenegger/nvim-dap" } -- Debugging
+  use { "rcarriga/cmp-dap" }
+  use { "williamboman/nvim-lsp-installer" }
 
   -- SQL
-  use{ "nanotee/sqls.nvim" }
+  use { "nanotee/sqls.nvim" }
 
   -- Bundle all the 'boilerplate code'
   use { "VonHeikemen/lsp-zero.nvim" }
-
 end)
