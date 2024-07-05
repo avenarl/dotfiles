@@ -21,5 +21,6 @@ require "configs.lsp.nvim-lsp-installer"
 require "configs.prettier"
 require "configs.whitespace"
 require "configs.trim"
+--require "configs.markdown"
 require("nvim-ts-autotag").setup()
 require("nvim-tree").setup {}
