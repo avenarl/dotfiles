@@ -16,15 +16,7 @@ return require("packer").startup(function(use)
   use { "ellisonleao/gruvbox.nvim" }
 
   -- Markdown
-  use {
-    "MeanderingProgrammer/markdown.nvim",
-    after = { "nvim-treesitter" }, -- Mandatory
-    requires = { "nvim-tree/nvim-web-devicons", opt = true }, -- Optional but recommended
-    config = function()
-      require("render-markdown").setup {}
-    end,
-  }
-
+  use { "iamcco/markdown-preview.nvim" }
   -- Whitespaces
   use { "lukoshkin/highlight-whitespace" }
   use { "johnfrankmorgan/whitespace.nvim" }
