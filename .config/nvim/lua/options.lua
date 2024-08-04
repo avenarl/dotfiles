@@ -1,4 +1,4 @@
-vim.cmd "colorscheme kanagawa"
+vim.cmd "colorscheme tokyonight-night"
 
 -- Disable mouse
 vim.opt.mouse = ""
