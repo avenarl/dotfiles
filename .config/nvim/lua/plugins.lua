@@ -16,12 +16,17 @@ return require("packer").startup(function(use)
   use { "ellisonleao/gruvbox.nvim" }
 
   -- Markdown
-  use { "iamcco/markdown-preview.nvim" }
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  }
+
   -- Whitespaces
   use { "lukoshkin/highlight-whitespace" }
   use { "johnfrankmorgan/whitespace.nvim" }
   use { "cappyzawa/trim.nvim" }
-  use { "mcauley-penney/tidy.nvim" }
 
   -- Higlighting Syntax
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
