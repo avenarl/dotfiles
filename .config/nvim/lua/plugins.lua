@@ -36,7 +36,7 @@ return require("packer").startup(function(use)
   use { "norcalli/nvim-colorizer.lua" }
 
   -- Icons
-  use { "kyazdani42/nvim-web-devicons" }
+  use { "nvim-tree/nvim-web-devicons" }
 
   -- File finder
   use { "ibhagwan/fzf-lua" }
