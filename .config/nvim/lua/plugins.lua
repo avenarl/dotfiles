@@ -37,16 +37,10 @@ return require("packer").startup(function(use)
       require("obsidian").setup {
         workspaces = {
           {
-            name = "personal",
-            path = "~/vaults/personal",
-          },
-          {
-            name = "work",
-            path = "~/vaults/work",
+            name = "Raven Notes",
+            path = "~/Workspace/Notes/software-engineering/",
           },
         },
-
-        -- see below for full list of options 👇
       }
     end,
   }
